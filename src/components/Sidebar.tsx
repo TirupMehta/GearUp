@@ -28,10 +28,10 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => 
   ];
 
   return (
-    <aside className="w-full lg:w-[320px] shrink-0 bg-slate-50/80 dark:bg-[#000000]/60 backdrop-blur-3xl border-b lg:border-b-0 lg:border-r border-black/10 dark:border-white/5 flex flex-col z-20">
+    <aside className="w-full lg:w-[320px] h-full min-h-0 shrink-0 bg-slate-50/80 dark:bg-[#000000]/60 backdrop-blur-3xl border-b lg:border-b-0 lg:border-r border-black/10 dark:border-white/5 flex flex-col z-20">
       <div className="p-4 lg:p-6 flex items-center justify-between shrink-0">
         <h2 className="text-xl font-bold flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg shadow-primary/20">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg shadow-primary/20 shrink-0">
             <span className="text-white font-bold text-sm">SG</span>
           </div>
           <span className="bg-gradient-to-r from-slate-900 dark:from-white to-slate-500 dark:to-zinc-400 bg-clip-text text-transparent tracking-tight">ShopGenie AI</span>
@@ -39,7 +39,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => 
         
         <button 
           onClick={() => setIsDark(!isDark)}
-          className="p-2 ml-2 rounded-xl bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300 border border-black/10 dark:border-white/5"
+          className="p-2 ml-2 shrink-0 rounded-xl bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300 border border-black/10 dark:border-white/5"
           aria-label="Toggle Theme"
         >
           {isDark ? (
@@ -50,7 +50,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => 
         </button>
       </div>
 
-      <nav className="flex lg:flex-1 lg:flex-col overflow-x-auto lg:overflow-visible px-4 lg:space-y-2 gap-2 pb-2 lg:pb-0 hide-scrollbar scroll-smooth">
+      <nav className="flex lg:flex-1 lg:flex-col overflow-x-auto lg:overflow-y-auto px-4 lg:space-y-2 gap-2 pb-2 lg:pb-0 hide-scrollbar scroll-smooth min-h-0">
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = activeTab === item.id;

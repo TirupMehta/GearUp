@@ -45,7 +45,7 @@ function App() {
   }
 
   return (
-    <div className="flex flex-col lg:flex-row h-screen w-full overflow-hidden bg-background selection:bg-primary/30 selection:text-slate-900 dark:text-white relative z-0">
+    <div className="flex flex-col lg:flex-row h-full w-full overflow-hidden bg-background selection:bg-primary/30 selection:text-slate-900 dark:text-white relative z-0">
       
       {/* Universal Background Glows */}
       <div className="absolute top-[-10%] left-[-10%] w-[50rem] h-[50rem] bg-primary/20 rounded-full blur-[150px] pointer-events-none -z-10 animate-pulse-glow" />
@@ -53,8 +53,8 @@ function App() {
 
       <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
 
-      <main className="flex-1 flex flex-col h-full overflow-y-auto w-full relative pb-20 lg:pb-0 z-10">
-        <header className="sticky top-0 z-10 bg-slate-50/80 dark:bg-[#000000]/80 backdrop-blur-xl border-b border-black/10 dark:border-white/5 p-4 lg:p-6 flex justify-between items-center shrink-0">
+      <main className="flex-1 flex flex-col h-full min-h-0 overflow-y-auto w-full relative pb-20 lg:pb-0 z-10">
+        <header className="sticky top-0 z-10 bg-slate-50/80 dark:bg-[#000000]/80 backdrop-blur-xl border-b border-black/10 dark:border-white/5 p-4 lg:p-6 flex justify-between items-center shrink-0 min-h-[72px]">
           <div>
             <h1 className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               {activeTab === 'manager' && 'Inventory Manager'}
