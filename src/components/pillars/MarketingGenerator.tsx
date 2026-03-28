@@ -49,7 +49,7 @@ CRITICAL RULE: Output MUST BE UNDER 10 WORDS TOTAL. Brutally short. Emojis allow
 
   if (!product) {
     return (
-      <div className="flex flex-col items-center justify-center h-64 text-slate-600 dark:text-zinc-400">
+      <div className="flex flex-col items-center justify-center h-64 text-text-muted">
         <Megaphone className="w-12 h-12 mb-4 opacity-50" />
         <p>No dead weight inventory detected to market.</p>
       </div>
@@ -59,22 +59,22 @@ CRITICAL RULE: Output MUST BE UNDER 10 WORDS TOTAL. Brutally short. Emojis allow
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 animate-fade-in">
       {/* Configuration Panel */}
-      <div className="bg-white/60 dark:bg-[#000000]/40 border border-black/10 dark:border-white/5 rounded-2xl p-6 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
-        <h3 className="font-semibold text-lg mb-6 flex items-center gap-2">
+      <div className="bg-panel border border-border rounded-2xl p-6 shadow-sm">
+        <h3 className="font-semibold text-lg mb-6 flex items-center gap-2 text-text">
           <Megaphone className="w-5 h-5 text-primary" />
           Campaign Configuration
         </h3>
         
         <div className="space-y-5">
           <div>
-            <label className="block text-sm text-slate-600 dark:text-zinc-400 mb-2">Target Product (Slow Moving)</label>
+            <label className="block text-sm text-text-muted mb-2">Target Product (Slow Moving)</label>
             <select 
-              className="w-full bg-black/5 dark:bg-white/5 border border-black/20 dark:border-white/10 rounded-2xl p-2.5 text-slate-900 dark:text-white focus:ring-primary focus:border-primary outline-none"
+              className="w-full bg-background border border-border rounded-2xl p-2.5 text-text focus:ring-primary focus:border-primary outline-none"
               value={selectedProduct}
               onChange={(e) => setSelectedProduct(e.target.value)}
             >
               {deadWeight.map(p => (
-                <option key={p.ProductName} value={p.ProductName}>
+                <option key={p.ProductName} value={p.ProductName} className="bg-panel">
                   {p.ProductName} (Stock: {p.TotalSold} sold historically)
                 </option>
               ))}
@@ -83,30 +83,30 @@ CRITICAL RULE: Output MUST BE UNDER 10 WORDS TOTAL. Brutally short. Emojis allow
 
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm text-slate-600 dark:text-zinc-400 mb-2">Discount Offering</label>
+              <label className="block text-sm text-text-muted mb-2">Discount Offering</label>
               <input 
                 type="text" 
                 value={discountValue}
                 onChange={(e) => setDiscountValue(e.target.value)}
-                className="w-full bg-black/5 dark:bg-white/5 border border-black/20 dark:border-white/10 rounded-2xl p-2.5 text-slate-900 dark:text-white focus:ring-primary focus:border-primary outline-none"
+                className="w-full bg-background border border-border rounded-2xl p-2.5 text-text focus:ring-primary focus:border-primary outline-none"
               />
             </div>
             <div>
-              <label className="block text-sm text-slate-600 dark:text-zinc-400 mb-2">Platform</label>
+              <label className="block text-sm text-text-muted mb-2">Platform</label>
               <select 
                 value={marketPlatform}
                 onChange={(e) => setMarketPlatform(e.target.value)}
-                className="w-full bg-black/5 dark:bg-white/5 border border-black/20 dark:border-white/10 rounded-2xl p-2.5 text-slate-900 dark:text-white focus:ring-primary focus:border-primary outline-none"
+                className="w-full bg-background border border-border rounded-2xl p-2.5 text-text focus:ring-primary focus:border-primary outline-none"
               >
-                <option>WhatsApp</option>
-                <option>Instagram Caption</option>
-                <option>Facebook Post</option>
+                <option className="bg-panel">WhatsApp</option>
+                <option className="bg-panel">Instagram Caption</option>
+                <option className="bg-panel">Facebook Post</option>
               </select>
             </div>
           </div>
 
           <div>
-            <label className="block text-sm text-slate-600 dark:text-zinc-400 mb-2 flex items-center gap-2">
+            <label className="block text-sm text-text-muted mb-2 flex items-center gap-2">
               <Languages className="w-4 h-4 text-accent" />
               Target Language translation
             </label>
@@ -117,8 +117,8 @@ CRITICAL RULE: Output MUST BE UNDER 10 WORDS TOTAL. Brutally short. Emojis allow
                   onClick={() => setLanguage(lang)}
                   className={`px-4 py-2 rounded-2xl text-sm transition ${
                     language === lang 
-                      ? 'bg-primary text-slate-900 dark:text-white font-medium shadow-[0_0_20px_rgba(255,255,255,0.05)] shadow-primary/20' 
-                      : 'bg-black/5 dark:bg-white/5 text-slate-600 dark:text-zinc-400 hover:bg-slate-700'
+                      ? 'bg-primary text-white font-medium shadow-lg' 
+                      : 'bg-background text-text-muted hover:bg-panel border border-border'
                   }`}
                 >
                   {lang}
@@ -130,7 +130,7 @@ CRITICAL RULE: Output MUST BE UNDER 10 WORDS TOTAL. Brutally short. Emojis allow
           <button 
             onClick={handleGenerate}
             disabled={isGenerating}
-            className="w-full mt-6 bg-primary hover:bg-primaryHover text-slate-900 dark:text-white py-3 rounded-2xl font-medium transition flex justify-center items-center gap-2 disabled:opacity-50"
+            className="w-full mt-6 bg-primary hover:bg-primaryHover text-white py-3 rounded-2xl font-medium transition flex justify-center items-center gap-2 disabled:opacity-50 shadow-lg"
           >
             {isGenerating ? <Loader2 className="w-5 h-5 animate-spin" /> : 'Generate Campaign via LLM'}
           </button>
@@ -138,21 +138,21 @@ CRITICAL RULE: Output MUST BE UNDER 10 WORDS TOTAL. Brutally short. Emojis allow
       </div>
 
       {/* Output Panel */}
-      <div className="bg-white/60 dark:bg-[#000000]/40 border border-black/10 dark:border-white/5 rounded-2xl p-6 shadow-[0_0_20px_rgba(255,255,255,0.05)] flex flex-col">
-        <h3 className="font-semibold text-lg mb-6 flex items-center gap-2 text-slate-700 dark:text-zinc-300">
+      <div className="bg-panel border border-border rounded-2xl p-6 shadow-sm flex flex-col">
+        <h3 className="font-semibold text-lg mb-6 flex items-center gap-2 text-text">
           Generated Output
         </h3>
         
-        <div className="flex-1 bg-black/5 dark:bg-white/5 backdrop-blur-lg border border-black/10 dark:border-white/5 rounded-2xl p-5 font-mono text-sm leading-relaxed text-slate-700 dark:text-zinc-300 whitespace-pre-wrap relative">
+        <div className="flex-1 bg-background backdrop-blur-lg border border-border rounded-2xl p-5 font-mono text-sm leading-relaxed text-text whitespace-pre-wrap relative">
           {generatedCopy ? generatedCopy : (
-            <span className="text-slate-500 dark:text-zinc-500 flex items-center justify-center h-full">
+            <span className="text-text-muted flex items-center justify-center h-full">
               Waiting for generation parameters...
             </span>
           )}
           
           {generatedCopy && (
             <button 
-              className="absolute top-4 right-4 text-xs bg-slate-700 hover:bg-slate-600 text-slate-900 dark:text-white px-3 py-1.5 rounded transition"
+              className="absolute top-4 right-4 text-xs bg-panel hover:bg-background border border-border text-text px-3 py-1.5 rounded transition"
               onClick={() => navigator.clipboard.writeText(generatedCopy)}
             >
               Copy

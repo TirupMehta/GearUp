@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { ShieldCheck, LogIn, UserPlus } from 'lucide-react';
+import { ShieldCheck, LogIn, UserPlus, Sun, Moon, ArrowRight } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
 
 export const LoginScreen: React.FC = () => {
   const { login, signup } = useAuth();
+  const { theme, toggleTheme } = useTheme();
   const [isSignup, setIsSignup] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -36,56 +38,71 @@ export const LoginScreen: React.FC = () => {
     <div className="min-h-screen bg-background flex items-center justify-center p-6">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center mx-auto mb-4 shadow-lg shadow-primary/30">
-            <span className="text-white font-bold text-2xl">SG</span>
+          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#1e40af] to-[#059669] flex items-center justify-center mx-auto mb-4 shadow-xl">
+            <span className="text-white font-black text-2xl">SG</span>
           </div>
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <h1 className="text-4xl font-extrabold text-primary mb-1">
             ShopGenie AI
           </h1>
-          <p className="text-slate-400 text-sm mt-2">Your AI-Powered Business Copilot</p>
+          <p className="text-text-muted font-medium text-sm">Your AI-Powered Business Copilot</p>
         </div>
 
-        <div className="bg-slate-900 border border-slate-700/50 rounded-2xl p-8 shadow-2xl">
-          <div className="flex gap-2 mb-6 bg-slate-800 rounded-xl p-1">
+        {/* Theme Toggle */}
+        <div className="absolute top-6 right-6">
+          <button
+            onClick={toggleTheme}
+            className="p-3 rounded-full bg-panel hover:bg-background border border-border text-text transition-all shadow-md"
+            title={`Switch to ${theme === 'light' ? 'Dark' : 'Light'} Mode`}
+          >
+            {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5 text-warning" />}
+          </button>
+        </div>
+
+        <div className="bg-panel border border-border rounded-2xl p-8 shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+          <div className="flex gap-2 mb-6 bg-background/50 border border-border/50 rounded-xl p-1">
             <button
               onClick={() => { setIsSignup(false); setError(''); }}
-              className={`flex-1 py-2.5 rounded-lg text-sm font-medium transition-all flex items-center justify-center gap-2 ${
-                !isSignup ? 'bg-primary text-white shadow-lg' : 'text-slate-400 hover:text-white'
+              className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg transition-all text-sm font-bold ${
+                !isSignup 
+                  ? 'bg-[#1e40af] text-white shadow-md' 
+                  : 'text-[#4b5563] hover:bg-gray-100'
               }`}
             >
               <LogIn className="w-4 h-4" /> Login
             </button>
             <button
               onClick={() => { setIsSignup(true); setError(''); }}
-              className={`flex-1 py-2.5 rounded-lg text-sm font-medium transition-all flex items-center justify-center gap-2 ${
-                isSignup ? 'bg-accent text-white shadow-lg' : 'text-slate-400 hover:text-white'
+              className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg transition-all text-sm font-bold ${
+                isSignup 
+                  ? 'bg-[#1e40af] text-white shadow-md' 
+                  : 'text-[#4b5563] hover:bg-gray-100'
               }`}
             >
               <UserPlus className="w-4 h-4" /> Sign Up
             </button>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <label className="text-sm font-medium text-slate-300 mb-1.5 block">Email</label>
+              <label className="block text-sm font-bold text-[#111827] mb-1.5 ml-1">Email Address</label>
               <input
                 type="email"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 required
-                placeholder="owner@shop.com"
-                className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-primary transition"
+                placeholder="name@store.com"
+                className="w-full px-4 py-3 rounded-xl bg-background border-2 border-border focus:border-[#1e40af] focus:ring-4 focus:ring-[#1e40af]/10 outline-none transition-all placeholder:text-text-muted/50 text-[#111827]"
               />
             </div>
             <div>
-              <label className="text-sm font-medium text-slate-300 mb-1.5 block">Password</label>
+              <label className="block text-sm font-bold text-[#111827] mb-1.5 ml-1">Password</label>
               <input
                 type="password"
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 required
                 placeholder="••••••••"
-                className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-primary transition"
+                className="w-full px-4 py-3 rounded-xl bg-background border-2 border-border focus:border-[#1e40af] focus:ring-4 focus:ring-[#1e40af]/10 outline-none transition-all placeholder:text-text-muted/50 text-[#111827]"
               />
             </div>
 
@@ -98,13 +115,14 @@ export const LoginScreen: React.FC = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white font-semibold py-3 rounded-xl transition-all shadow-lg shadow-primary/20 disabled:opacity-50"
+              className="w-full py-4 bg-gradient-to-r from-[#1e40af] to-[#1e3a8a] text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-[#1e40af]/30 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3 mt-4 disabled:opacity-50"
             >
-              {loading ? 'Please wait...' : (isSignup ? 'Create Account' : 'Login')}
+              {loading ? 'Please wait...' : (isSignup ? 'Create Account' : 'Sign In to Copilot')}
+              {!loading && <ArrowRight className="w-5 h-5" />}
             </button>
           </form>
 
-          <div className="mt-6 flex items-center gap-2 text-xs text-slate-500 justify-center">
+          <div className="mt-6 flex items-center gap-2 text-xs text-text-muted justify-center">
             <ShieldCheck className="w-3.5 h-3.5 text-accent" />
             <span>Secured by Firebase Authentication</span>
           </div>

@@ -48,19 +48,19 @@ Be specific with product names. No generic advice.`;
 
   return (
     <div className="space-y-6 animate-fade-in">
-      <div className="bg-white/60 dark:bg-[#000000]/40 border border-black/10 dark:border-white/5 rounded-2xl p-6 shadow-[0_0_20px_rgba(255,255,255,0.05)] flex justify-between items-center">
+      <div className="bg-panel border border-border rounded-2xl p-6 shadow-lg flex justify-between items-center">
         <div>
-          <h3 className="font-semibold text-lg flex items-center gap-2">
+          <h3 className="font-semibold text-lg flex items-center gap-2 text-text">
             <PackageOpen className="w-5 h-5 text-primary" />
             Full Inventory Manager
           </h3>
-          <p className="text-sm text-slate-600 dark:text-zinc-400 mt-1">Manually update stock counts or fetch AI recommendations.</p>
+          <p className="text-sm text-text-muted mt-1">Manually update stock counts or fetch AI recommendations.</p>
         </div>
         
         <button 
           onClick={generateSnapshot}
           disabled={snapshotLoading}
-          className="bg-accent hover:bg-accent/80 text-slate-900 dark:text-white px-5 py-2.5 rounded-2xl flex items-center gap-2 transition disabled:opacity-50"
+          className="bg-accent hover:bg-accent/80 text-white px-5 py-2.5 rounded-2xl flex items-center gap-2 transition disabled:opacity-50"
         >
           {snapshotLoading ? <Loader2 className="w-5 h-5 animate-spin" /> : <BrainCircuit className="w-5 h-5" />}
           AI Daily Snapshot
@@ -68,18 +68,18 @@ Be specific with product names. No generic advice.`;
       </div>
 
       {snapshotObj && (
-        <div className="bg-primary/10 border border-primary/50 text-slate-900 dark:text-white rounded-2xl p-5 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
+        <div className="bg-primary/5 border border-primary/20 text-text rounded-2xl p-5 shadow-sm">
           <div className="flex items-center gap-2 mb-3">
             <BrainCircuit className="w-5 h-5 text-primary" />
             <span className="font-semibold text-primary">AI Daily Snapshot</span>
           </div>
-          <div className="text-sm text-slate-200 whitespace-pre-line">{snapshotObj}</div>
+          <div className="text-sm text-text whitespace-pre-line bg-panel/30 p-4 rounded-xl">{snapshotObj}</div>
         </div>
       )}
 
-      <div className="bg-white/60 dark:bg-[#000000]/40 border border-black/10 dark:border-white/5 rounded-2xl overflow-hidden shadow-[0_0_20px_rgba(255,255,255,0.05)]">
+      <div className="bg-panel border border-border rounded-2xl overflow-hidden shadow-sm">
         <table className="w-full text-sm text-left">
-          <thead className="bg-black/10 dark:bg-white/10 backdrop-blur-xl text-slate-600 dark:text-zinc-400">
+          <thead className="bg-background/80 backdrop-blur-xl text-text-muted">
             <tr>
               <th className="px-6 py-4 font-semibold">Product Name</th>
               <th className="px-6 py-4 font-semibold">Category</th>
@@ -87,31 +87,31 @@ Be specific with product names. No generic advice.`;
               <th className="px-6 py-4 font-semibold text-right">Manual Action</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-700/50">
+          <tbody className="divide-y divide-border">
             {allProducts.map((p, idx) => (
-              <tr key={idx} className="hover:bg-[#000000]/30 backdrop-blur-sm transition">
-                <td className="px-6 py-4 font-medium text-slate-200">{p.ProductName}</td>
-                <td className="px-6 py-4 text-slate-600 dark:text-zinc-400">{p.Category}</td>
-                <td className="px-6 py-4 text-center text-lg font-semibold text-slate-900 dark:text-white">
+              <tr key={idx} className="hover:bg-background/50 transition">
+                <td className="px-6 py-4 font-medium text-text">{p.ProductName}</td>
+                <td className="px-6 py-4 text-text-muted">{p.Category}</td>
+                <td className="px-6 py-4 text-center text-lg font-semibold text-text">
                   {stockMap[p.ProductName] || 0}
                 </td>
                 <td className="px-6 py-4">
                   <div className="flex justify-end gap-2">
                     <button 
                       onClick={() => updateStock(p.ProductName, -1)}
-                      className="p-2 bg-black/5 dark:bg-white/5 hover:bg-danger/80 hover:text-slate-900 dark:text-white rounded-2xl transition border border-black/10 dark:border-white/5 hover:border-danger"
+                      className="p-2 bg-background hover:bg-danger/80 hover:text-white rounded-2xl transition border border-border hover:border-danger text-text"
                     >
                       <Minus className="w-4 h-4" />
                     </button>
                     <button 
                       onClick={() => updateStock(p.ProductName, 1)}
-                      className="p-2 bg-black/5 dark:bg-white/5 hover:bg-primary/80 hover:text-slate-900 dark:text-white rounded-2xl transition border border-black/10 dark:border-white/5 hover:border-primary"
+                      className="p-2 bg-background hover:bg-primary/80 hover:text-white rounded-2xl transition border border-border hover:border-primary text-text"
                     >
                       <Plus className="w-4 h-4" />
                     </button>
                     <button 
                       onClick={() => updateStock(p.ProductName, 10)}
-                      className="px-3 py-1 text-xs font-semibold bg-black/5 dark:bg-white/5 hover:bg-slate-700 text-slate-700 dark:text-zinc-300 rounded-2xl transition border border-black/10 dark:border-white/5"
+                      className="px-3 py-1 text-xs font-semibold bg-background hover:bg-primary hover:text-white text-text-muted rounded-2xl transition border border-border"
                     >
                       +10
                     </button>

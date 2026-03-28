@@ -19,9 +19,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => 
   ];
 
   return (
-    <aside className="w-[320px] shrink-0 bg-panel border-r border-slate-700/50 flex flex-col h-full">
+    <aside className="w-[320px] shrink-0 bg-panel border-r border-border flex flex-col h-full">
       <div className="p-6">
-        <h2 className="text-xl font-bold flex items-center gap-2">
+        <h2 className="text-xl font-bold flex items-center gap-2 text-text">
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
             <span className="text-white font-bold text-sm">SG</span>
           </div>
@@ -40,7 +40,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => 
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${
                 isActive 
                   ? 'bg-primary/10 text-primary font-semibold' 
-                  : 'text-slate-400 hover:bg-slate-800 hover:text-white'
+                  : 'text-text-muted hover:bg-background hover:text-text'
               }`}
             >
               <Icon className={`w-5 h-5 ${isActive ? 'text-primary' : ''}`} />
@@ -50,22 +50,22 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => 
         })}
       </nav>
 
-      <div className="p-6 border-t border-slate-700/50">
-        <div className="bg-slate-900 rounded-xl p-4 border border-slate-800">
-          <div className="flex items-center gap-2 mb-2 text-sm text-slate-400">
+      <div className="p-6 border-t border-border">
+        <div className="bg-background rounded-xl p-4 border border-border">
+          <div className="flex items-center gap-2 mb-2 text-sm text-text-muted">
             <ShieldCheck className="w-4 h-4 text-accent" />
             <span>Data Integrity Active</span>
           </div>
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-text-muted/70">
             {transactions.length} verified transactions loaded.
           </p>
           
           <div className="mt-4">
             <div className="flex justify-between text-xs mb-1">
-              <span className="text-slate-400">Health Risk Score</span>
+              <span className="text-text-muted">Health Risk Score</span>
               <span className={riskScore > 50 ? 'text-danger' : 'text-accent'}>{riskScore}/100</span>
             </div>
-            <div className="w-full bg-slate-800 rounded-full h-1.5 overflow-hidden">
+            <div className="w-full bg-panel rounded-full h-1.5 overflow-hidden">
               <div 
                 className={`h-full ${riskScore > 50 ? 'bg-danger' : 'bg-accent'}`} 
                 style={{ width: `${riskScore}%` }}

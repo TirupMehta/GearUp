@@ -46,8 +46,8 @@ export default function BusinessHealth() {
       
       {/* Top Level KPIs */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-white/60 dark:bg-[#000000]/40 border border-black/10 dark:border-white/5 rounded-2xl p-5 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
-          <div className="text-slate-600 dark:text-zinc-400 text-sm mb-1 flex justify-between">
+        <div className="bg-panel border border-border rounded-2xl p-5 shadow-sm">
+          <div className="text-text-muted text-sm mb-1 flex justify-between">
             Global Health Score
             <Activity className="w-5 h-5 text-accent" />
           </div>
@@ -56,22 +56,22 @@ export default function BusinessHealth() {
           </div>
         </div>
         
-        <div className="bg-white/60 dark:bg-[#000000]/40 border border-black/10 dark:border-white/5 rounded-2xl p-5 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
-          <div className="text-slate-600 dark:text-zinc-400 text-sm mb-1 flex justify-between">
+        <div className="bg-panel border border-border rounded-2xl p-5 shadow-sm">
+          <div className="text-text-muted text-sm mb-1 flex justify-between">
             Average Run Rate Margin
             <Target className="w-5 h-5 text-primary" />
           </div>
-          <div className="text-3xl font-bold text-slate-900 dark:text-white">
+          <div className="text-3xl font-bold text-text">
             {avgMargin.toFixed(1)}%
           </div>
         </div>
 
-        <div className="bg-white/60 dark:bg-[#000000]/40 border border-black/10 dark:border-white/5 rounded-2xl p-5 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
-          <div className="text-slate-600 dark:text-zinc-400 text-sm mb-1 flex justify-between">
+        <div className="bg-panel border border-border rounded-2xl p-5 shadow-sm">
+          <div className="text-text-muted text-sm mb-1 flex justify-between">
             Detected Anomalies
             <ShieldAlert className="w-5 h-5 text-warning" />
           </div>
-          <div className="text-3xl font-bold text-slate-900 dark:text-white">
+          <div className="text-3xl font-bold text-text">
             {anomalyData.anomalies}
           </div>
         </div>
@@ -81,30 +81,30 @@ export default function BusinessHealth() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
         {/* Anomaly Scatter Plot */}
-        <div className="bg-white/60 dark:bg-[#000000]/40 border border-black/10 dark:border-white/5 rounded-2xl p-6 shadow-[0_0_20px_rgba(255,255,255,0.05)] lg:col-span-2">
-          <h3 className="font-semibold text-lg mb-6 flex items-center gap-2">
+        <div className="bg-panel border border-border rounded-2xl p-6 shadow-sm lg:col-span-2">
+          <h3 className="font-semibold text-lg mb-6 flex items-center gap-2 text-text">
             <Activity className="w-5 h-5 text-warning" />
             Revenue Anomaly Detection
           </h3>
-          <p className="text-xs text-slate-600 dark:text-zinc-400 mb-4">
+          <p className="text-xs text-text-muted mb-4">
             Identifying days with unnatural sales spikes or drops (&gt; 1.5 standard deviations from mean).
           </p>
           <div className="h-72">
             <ResponsiveContainer width="100%" height="100%">
               <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
-                <XAxis dataKey="dayIndex" type="number" name="Day" stroke="#94a3b8" />
-                <YAxis dataKey="revenue" type="number" name="Revenue" stroke="#94a3b8" />
+                <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
+                <XAxis dataKey="dayIndex" type="number" name="Day" stroke="var(--text-muted)" fontSize={12} />
+                <YAxis dataKey="revenue" type="number" name="Revenue" stroke="var(--text-muted)" fontSize={12} />
                 <Tooltip 
                   cursor={{ strokeDasharray: '3 3' }} 
-                  contentStyle={{ backgroundColor: '#1e293b', border: '1px solid #475569', borderRadius: '8px' }}
-                  itemStyle={{ color: '#e2e8f0' }}
+                  contentStyle={{ backgroundColor: 'var(--panel)', border: '1px solid var(--border)', borderRadius: '12px' }}
+                  itemStyle={{ color: 'var(--text)' }}
                   formatter={(value: number, name: string) => name === 'Revenue' ? [`₹${value.toFixed(2)}`, name] : [value, name]}
                   labelFormatter={() => ''}
                 />
                 <Scatter name="Daily Revenue" data={anomalyData.data}>
                   {anomalyData.data.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={entry.isAnomaly ? '#ef4444' : '#3b82f6'} />
+                    <Cell key={`cell-${index}`} fill={entry.isAnomaly ? 'var(--danger)' : 'var(--primary)'} />
                   ))}
                 </Scatter>
               </ScatterChart>
@@ -113,29 +113,29 @@ export default function BusinessHealth() {
         </div>
 
         {/* Warning Readout */}
-        <div className="bg-white/60 dark:bg-[#000000]/40 border border-black/10 dark:border-white/5 rounded-2xl p-6 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
-           <h3 className="font-semibold text-lg mb-4 flex items-center gap-2 text-slate-700 dark:text-zinc-300">
+        <div className="bg-panel border border-border rounded-2xl p-6 shadow-sm">
+           <h3 className="font-semibold text-lg mb-4 flex items-center gap-2 text-text">
             System Diagnosis
           </h3>
           <div className="space-y-4">
-            <div className="bg-black/5 dark:bg-white/5 backdrop-blur-lg p-4 rounded-2xl border border-black/10 dark:border-white/5">
-              <h4 className="text-sm font-medium text-slate-200 mb-1 flex items-center gap-2">
+            <div className="bg-background backdrop-blur-lg p-4 rounded-2xl border border-border">
+              <h4 className="text-sm font-medium text-text mb-1 flex items-center gap-2">
                 <TrendingDown className="w-4 h-4 text-warning" />
                 Margin Dilution Risk
               </h4>
-              <p className="text-xs text-slate-600 dark:text-zinc-400">
+              <p className="text-xs text-text-muted">
                 {avgMargin < 15 
                   ? "CRITICAL: Global margins have dropped below 15%. Immediately review price elasticity for top selling products." 
                   : "Stable: Margins are holding steady across the primary product portfolio."}
               </p>
             </div>
             
-             <div className="bg-black/5 dark:bg-white/5 backdrop-blur-lg p-4 rounded-2xl border border-black/10 dark:border-white/5">
-              <h4 className="text-sm font-medium text-slate-200 mb-1 flex items-center gap-2">
+             <div className="bg-background backdrop-blur-lg p-4 rounded-2xl border border-border">
+              <h4 className="text-sm font-medium text-text mb-1 flex items-center gap-2">
                 <ShieldAlert className="w-4 h-4 text-danger" />
                 Anomaly Insights
               </h4>
-              <p className="text-xs text-slate-600 dark:text-zinc-400">
+              <p className="text-xs text-text-muted">
                 {anomalyData.anomalies > 5 
                   ? `High volatility detected (${anomalyData.anomalies} anomalies). Inspect Copilot for specific product stockouts on these dates.` 
                   : "Revenue variance is within normal statistical thresholds."}

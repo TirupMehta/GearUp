@@ -2,26 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --v-bg: #f9fafb;
+  --v-panel: #ffffff;
+  --v-primary: #1e40af;
+  --v-primary-hover: #1e3a8a;
+  --v-accent: #059669;
+  --v-danger: #b91c1c;
+  --v-warning: #b45309;
+  --v-text: #111827;
+  --v-text-muted: #4b5563;
+  --v-border: #d1d5db;
+}
+
+.dark {
+  --v-bg: #0a0f19;
+  --v-panel: #141923;
+  --v-primary: #3b82f6;
+  --v-primary-hover: #2563eb;
+  --v-accent: #22c55e;
+  --v-danger: #ef4444;
+  --v-warning: #f59e0b;
+  --v-text: #f3f4f6;
+  --v-text-muted: #9ca3af;
+  --v-border: #2d374b;
+}
+
 @layer base {
   body {
-    @apply bg-background text-white antialiased font-sans;
+    background-color: var(--v-bg);
+    color: var(--v-text);
+    @apply antialiased font-sans transition-colors duration-300;
   }
 }
 
-/* Custom scrollbar for dark theme */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0f172a; 
+  background: var(--v-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: #334155; 
+  background: var(--v-border);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #475569; 
+  background: var(--v-text-muted);
 }
 
 /* Subtle animations */

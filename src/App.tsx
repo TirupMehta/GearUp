@@ -6,7 +6,8 @@ import { UploadScreen } from './components/UploadScreen';
 import { SplashScreen } from './components/SplashScreen';
 import { Sidebar } from './components/Sidebar';
 import { Copilot } from './components/Copilot';
-import { LogOut } from 'lucide-react';
+import { useTheme } from './context/ThemeContext';
+import { LogOut, Sun, Moon } from 'lucide-react';
 
 import InventoryIntelligence from './components/pillars/InventoryIntelligence';
 import InventoryManager from './components/pillars/InventoryManager';
@@ -17,6 +18,7 @@ import BusinessHealth from './components/pillars/BusinessHealth';
 function App() {
   const { user, loading, logout } = useAuth();
   const { hasData } = useDashboard();
+  const { theme, toggleTheme } = useTheme();
   const [activeTab, setActiveTab] = useState('manager');
   const [showSplash, setShowSplash] = useState(true);
 
@@ -49,7 +51,7 @@ function App() {
       <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
 
       <main className="flex-1 flex flex-col h-full overflow-y-auto w-full max-w-[calc(100%-320px)] relative">
-        <header className="sticky top-0 z-10 bg-panel/80 backdrop-blur-md border-b border-slate-700/50 p-6 flex justify-between items-center">
+        <header className="sticky top-0 z-10 bg-panel/80 backdrop-blur-md border-b border-border p-6 flex justify-between items-center">
           <div>
             <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               {activeTab === 'manager' && 'Inventory Manager'}
@@ -58,20 +60,29 @@ function App() {
               {activeTab === 'marketing' && 'AI Marketing Generator'}
               {activeTab === 'health' && 'Business Health Dashboard'}
             </h1>
-            <p className="text-sm text-slate-400 mt-1">
+            <p className="text-sm text-text-muted mt-1">
               Logged in as <span className="text-primary">{user.email}</span>
             </p>
           </div>
-          <button
-            onClick={logout}
-            className="flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-danger/80 text-slate-300 hover:text-white rounded-lg border border-slate-700 hover:border-danger transition text-sm"
-          >
-            <LogOut className="w-4 h-4" />
-            Logout
-          </button>
+          <div className="flex items-center gap-4">
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-lg bg-panel hover:bg-background border border-border text-text transition-all"
+              title={`Switch to ${theme === 'light' ? 'Dark' : 'Light'} Mode`}
+            >
+              {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5 text-warning" />}
+            </button>
+            <button
+              onClick={logout}
+              className="flex items-center gap-2 px-4 py-2 bg-panel hover:bg-danger/80 text-text hover:text-white rounded-lg border border-border hover:border-danger transition text-sm shadow-sm"
+            >
+              <LogOut className="w-4 h-4" />
+              Logout
+            </button>
+          </div>
         </header>
         
-        <div className="p-6 flex-1 bg-gradient-to-br from-background to-[#111827]">
+        <div className="p-6 flex-1 bg-gradient-to-br from-background to-panel/30">
           {activeTab === 'manager' && <InventoryManager />}
           {activeTab === 'inventory' && <InventoryIntelligence />}
           {activeTab === 'pricing' && <PriceEngine />}

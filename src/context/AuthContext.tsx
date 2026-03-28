@@ -10,12 +10,12 @@ import {
 import { initializeApp } from 'firebase/app';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyASLfNv5nGmeCNXqG6Gqkxw5JrP6V9TxlA",
-  authDomain: "shopgeniedb.firebaseapp.com",
-  projectId: "shopgeniedb",
-  storageBucket: "shopgeniedb.firebasestorage.app",
-  messagingSenderId: "148425560845",
-  appId: "1:148425560845:web:9c66e868a492dc05039644"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 const app = initializeApp(firebaseConfig);

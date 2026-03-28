@@ -61,7 +61,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
           <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-3 text-center">
             Welcome to ShopGenie
           </h1>
-          <p className="text-slate-400 text-center text-lg">Intelligent Retail Operations</p>
+          <p className="text-text-muted text-center text-lg">Intelligent Retail Operations</p>
         </div>
 
       </div>

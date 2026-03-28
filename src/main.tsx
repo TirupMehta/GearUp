@@ -4,13 +4,16 @@ import App from './App.tsx'
 import './index.css'
 import { AuthProvider } from './context/AuthContext'
 import { DashboardProvider } from './context/DashboardContext'
+import { ThemeProvider } from './context/ThemeContext'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <AuthProvider>
-      <DashboardProvider>
-        <App />
-      </DashboardProvider>
+      <ThemeProvider>
+        <DashboardProvider>
+          <App />
+        </DashboardProvider>
+      </ThemeProvider>
     </AuthProvider>
   </React.StrictMode>,
 )
