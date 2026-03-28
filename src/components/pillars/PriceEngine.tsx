@@ -49,7 +49,7 @@ export default function PriceEngine() {
 
   if (!product) {
     return (
-      <div className="flex flex-col items-center justify-center h-64 text-zinc-400">
+      <div className="flex flex-col items-center justify-center h-64 text-slate-600 dark:text-zinc-400">
         <Calculator className="w-12 h-12 mb-4 opacity-50" />
         <p>No dead weight inventory detected for simulation.</p>
       </div>
@@ -61,7 +61,7 @@ export default function PriceEngine() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
         {/* Controls */}
-        <div className="bg-[#000000]/40 border border-white/5 rounded-2xl p-6 shadow-[0_0_20px_rgba(255,255,255,0.05)] lg:col-span-1">
+        <div className="bg-white/60 dark:bg-[#000000]/40 border border-black/10 dark:border-white/5 rounded-2xl p-6 shadow-[0_0_20px_rgba(255,255,255,0.05)] lg:col-span-1">
           <h3 className="font-semibold text-lg mb-6 flex items-center gap-2">
             <DollarSign className="w-5 h-5 text-primary" />
             Pricing Simulator
@@ -69,9 +69,9 @@ export default function PriceEngine() {
           
           <div className="space-y-6">
             <div>
-              <label className="block text-sm text-zinc-400 mb-2">Select Dead Weight Item</label>
+              <label className="block text-sm text-slate-600 dark:text-zinc-400 mb-2">Select Dead Weight Item</label>
               <select 
-                className="w-full bg-white/5 border border-white/10 rounded-2xl p-2.5 text-white focus:ring-primary focus:border-primary outline-none"
+                className="w-full bg-black/5 dark:bg-white/5 border border-black/20 dark:border-white/10 rounded-2xl p-2.5 text-slate-900 dark:text-white focus:ring-primary focus:border-primary outline-none"
                 value={selectedProduct}
                 onChange={(e) => setSelectedProduct(e.target.value)}
               >
@@ -85,7 +85,7 @@ export default function PriceEngine() {
 
             <div>
               <div className="flex justify-between text-sm mb-2">
-                <label className="text-zinc-400">Target Discount</label>
+                <label className="text-slate-600 dark:text-zinc-400">Target Discount</label>
                 <span className="text-accent font-medium">{discountPercent}%</span>
               </div>
               <input 
@@ -99,7 +99,7 @@ export default function PriceEngine() {
 
             <div>
               <div className="flex justify-between text-sm mb-2">
-                <label className="text-zinc-400">Expected Sales Lift</label>
+                <label className="text-slate-600 dark:text-zinc-400">Expected Sales Lift</label>
                 <span className="text-primary font-medium">+{projectedSalesLift}% Volume</span>
               </div>
               <input 
@@ -111,25 +111,25 @@ export default function PriceEngine() {
               />
             </div>
             
-            <div className="pt-4 border-t border-white/5">
-              <div className="bg-white/5 rounded-2xl p-4">
-                <div className="text-sm text-zinc-400 mb-1">New Simulated Price</div>
-                <div className="text-2xl font-bold text-white">₹{currentSimulation?.simulatedPrice.toFixed(2)}</div>
-                <div className="text-xs text-zinc-500 mt-2">Cost: ₹{product.Cost.toFixed(2)}</div>
+            <div className="pt-4 border-t border-black/10 dark:border-white/5">
+              <div className="bg-black/5 dark:bg-white/5 rounded-2xl p-4">
+                <div className="text-sm text-slate-600 dark:text-zinc-400 mb-1">New Simulated Price</div>
+                <div className="text-2xl font-bold text-slate-900 dark:text-white">₹{currentSimulation?.simulatedPrice.toFixed(2)}</div>
+                <div className="text-xs text-slate-500 dark:text-zinc-500 mt-2">Cost: ₹{product.Cost.toFixed(2)}</div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Chart */}
-        <div className="bg-[#000000]/40 border border-white/5 rounded-2xl p-6 shadow-[0_0_20px_rgba(255,255,255,0.05)] lg:col-span-2">
+        <div className="bg-white/60 dark:bg-[#000000]/40 border border-black/10 dark:border-white/5 rounded-2xl p-6 shadow-[0_0_20px_rgba(255,255,255,0.05)] lg:col-span-2">
           <div className="flex justify-between items-start mb-6">
             <h3 className="font-semibold text-lg flex items-center gap-2">
               <TrendingUp className="w-5 h-5 text-accent" />
               Scenario-Based Profit Simulation
             </h3>
             <div className="text-right">
-              <div className="text-sm text-zinc-400">Projected Weekly Profit</div>
+              <div className="text-sm text-slate-600 dark:text-zinc-400">Projected Weekly Profit</div>
               <div className={`text-3xl font-bold ${currentSimulation!.projectedProfit > 0 ? 'text-accent' : 'text-danger'}`}>
                 ₹{currentSimulation?.projectedProfit.toLocaleString()}
               </div>

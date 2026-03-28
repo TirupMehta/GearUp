@@ -135,8 +135,8 @@ User Question: ${userText}
   };
 
   return (
-    <aside className="w-[360px] shrink-0 bg-[#000000]/40 backdrop-blur-xl border border-white/5 rounded-3xl border-l border-white/5 flex flex-col h-full right-0 top-0 hidden xl:flex absolute xl:relative z-20">
-      <div className="p-4 border-b border-white/5 flex items-center gap-2 bg-[#000000]/30 backdrop-blur-sm">
+    <aside className="w-[360px] shrink-0 bg-white/60 dark:bg-[#000000]/40 backdrop-blur-xl border border-black/10 dark:border-white/5 rounded-3xl border-l border-black/10 dark:border-white/5 flex flex-col h-full right-0 top-0 hidden xl:flex absolute xl:relative z-20">
+      <div className="p-4 border-b border-black/10 dark:border-white/5 flex items-center gap-2 bg-[#000000]/30 backdrop-blur-sm">
         <Sparkles className="w-5 h-5 text-accent" />
         <h3 className="font-semibold text-slate-100">AI Copilot</h3>
       </div>
@@ -151,8 +151,8 @@ User Question: ${userText}
             </div>
             <div className={`p-3 rounded-2xl max-w-[85%] text-sm ${
               m.role === 'user' 
-                ? 'bg-primary text-white rounded-tr-none' 
-                : 'bg-white/5 text-zinc-300 rounded-tl-none border border-white/5 prose prose-invert prose-sm'
+                ? 'bg-primary text-slate-900 dark:text-white rounded-tr-none' 
+                : 'bg-black/5 dark:bg-white/5 text-slate-700 dark:text-zinc-300 rounded-tl-none border border-black/10 dark:border-white/5 prose prose-invert prose-sm'
             }`}>
               {m.role === 'user' ? (
                 m.text
@@ -161,7 +161,7 @@ User Question: ${userText}
                   p: ({node, ...props}) => <p className="mb-2 last:mb-0" {...props} />,
                   ul: ({node, ...props}) => <ul className="list-disc pl-4 mb-2 space-y-1" {...props} />,
                   ol: ({node, ...props}) => <ol className="list-decimal pl-4 mb-2 space-y-1" {...props} />,
-                  strong: ({node, ...props}) => <strong className="text-white font-semibold" {...props} />,
+                  strong: ({node, ...props}) => <strong className="text-slate-900 dark:text-white font-semibold" {...props} />,
                 }}>
                   {m.text}
                 </ReactMarkdown>
@@ -174,7 +174,7 @@ User Question: ${userText}
               <div className="w-8 h-8 rounded-full shrink-0 flex items-center justify-center bg-slate-700">
                 <BrainCircuit className="w-4 h-4 text-accent" />
               </div>
-              <div className="p-3 py-4 rounded-2xl bg-white/5 rounded-tl-none border border-white/5 flex gap-1 items-center">
+              <div className="p-3 py-4 rounded-2xl bg-black/5 dark:bg-white/5 rounded-tl-none border border-black/10 dark:border-white/5 flex gap-1 items-center">
                 <div className="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
                 <div className="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
                 <div className="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce"></div>
@@ -184,12 +184,12 @@ User Question: ${userText}
         <div ref={bottomRef} />
       </div>
 
-      <div className="p-4 border-t border-white/5 bg-[#000000]/40">
+      <div className="p-4 border-t border-black/10 dark:border-white/5 bg-white/60 dark:bg-[#000000]/40">
         
         <button 
           onClick={generateBattleplan}
           disabled={isTyping}
-          className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white font-medium py-2 rounded-2xl mb-4 shadow-[0_0_20px_rgba(255,255,255,0.05)] shadow-primary/20 transition-all text-sm disabled:opacity-50"
+          className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-accent hover:opacity-90 text-slate-900 dark:text-white font-medium py-2 rounded-2xl mb-4 shadow-[0_0_20px_rgba(255,255,255,0.05)] shadow-primary/20 transition-all text-sm disabled:opacity-50"
         >
           <Play className="w-4 h-4" />
           Generate Weekly Battleplan
@@ -199,7 +199,7 @@ User Question: ${userText}
           {/* Voice Feature */}
           <button 
             onClick={simulateVoice}
-            className="p-2 shrink-0 text-zinc-400 hover:text-accent hover:bg-white/5 rounded-2xl border border-white/5 transition"
+            className="p-2 shrink-0 text-slate-600 dark:text-zinc-400 hover:text-accent hover:bg-black/5 dark:bg-white/5 rounded-2xl border border-black/10 dark:border-white/5 transition"
             title="Voice-to-Action Simulation"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
@@ -211,12 +211,12 @@ User Question: ${userText}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
             placeholder="Ask Copilot..."
-            className="w-full bg-white/5 border border-white/5 rounded-full py-2 pl-4 pr-10 text-sm focus:outline-none focus:border-primary text-white"
+            className="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/5 rounded-full py-2 pl-4 pr-10 text-sm focus:outline-none focus:border-primary text-slate-900 dark:text-white"
           />
           <button 
             onClick={handleSend}
             disabled={!input.trim() || isTyping}
-            className="absolute right-1 top-1 p-1.5 bg-primary text-white rounded-full hover:bg-primaryHover disabled:bg-slate-600 transition"
+            className="absolute right-1 top-1 p-1.5 bg-primary text-slate-900 dark:text-white rounded-full hover:bg-primaryHover disabled:bg-slate-600 transition"
           >
             <Send className="w-4 h-4" />
           </button>
