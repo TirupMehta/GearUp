@@ -54,7 +54,7 @@ function App() {
       <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
 
       <main className="flex-1 flex flex-col h-full overflow-y-auto w-full relative pb-20 lg:pb-0 z-10">
-        <header className="sticky top-0 z-10 bg-panel/80 backdrop-blur-md border-b border-black/10 dark:border-white/5 p-4 lg:p-6 flex justify-between items-center">
+        <header className="sticky top-0 z-10 bg-slate-50/80 dark:bg-[#000000]/80 backdrop-blur-xl border-b border-black/10 dark:border-white/5 p-4 lg:p-6 flex justify-between items-center shrink-0">
           <div>
             <h1 className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               {activeTab === 'manager' && 'Inventory Manager'}

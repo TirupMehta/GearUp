@@ -28,8 +28,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => 
   ];
 
   return (
-    <aside className="w-full lg:w-[320px] shrink-0 bg-panel border-b lg:border-b-0 lg:border-r border-black/10 dark:border-white/5 flex flex-col z-20">
-      <div className="p-4 lg:p-6 flex items-center justify-between">
+    <aside className="w-full lg:w-[320px] shrink-0 bg-slate-50/80 dark:bg-[#000000]/60 backdrop-blur-3xl border-b lg:border-b-0 lg:border-r border-black/10 dark:border-white/5 flex flex-col z-20">
+      <div className="p-4 lg:p-6 flex items-center justify-between shrink-0">
         <h2 className="text-xl font-bold flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg shadow-primary/20">
             <span className="text-white font-bold text-sm">SG</span>
@@ -71,7 +71,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => 
         })}
       </nav>
 
-      <div className="hidden lg:block p-6 border-t border-black/10 dark:border-white/5 mt-auto">
+      <div className="hidden lg:block p-6 border-t border-black/10 dark:border-white/5 mt-auto shrink-0">
         <div className="bg-white/60 dark:bg-[#000000]/50 rounded-2xl p-4 border border-black/10 dark:border-white/5 backdrop-blur-md shadow-sm dark:shadow-none">
           <div className="flex items-center gap-2 mb-2 text-sm text-slate-600 dark:text-zinc-400">
             <ShieldCheck className="w-4 h-4 text-accent animate-pulse-glow" />
