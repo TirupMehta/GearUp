@@ -45,10 +45,15 @@ function App() {
   }
 
   return (
-    <div className="flex flex-col lg:flex-row h-screen w-full overflow-hidden bg-background selection:bg-primary/30 selection:text-primary">
+    <div className="flex flex-col lg:flex-row h-screen w-full overflow-hidden bg-background selection:bg-primary/30 selection:text-white relative z-0">
+      
+      {/* Universal Background Glows */}
+      <div className="absolute top-[-10%] left-[-10%] w-[50rem] h-[50rem] bg-primary/20 rounded-full blur-[150px] pointer-events-none -z-10 animate-pulse-glow" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[40rem] h-[40rem] bg-accent/10 rounded-full blur-[150px] pointer-events-none -z-10" />
+
       <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
 
-      <main className="flex-1 flex flex-col h-full overflow-y-auto w-full relative pb-20 lg:pb-0">
+      <main className="flex-1 flex flex-col h-full overflow-y-auto w-full relative pb-20 lg:pb-0 z-10">
         <header className="sticky top-0 z-10 bg-panel/80 backdrop-blur-md border-b border-white/5 p-4 lg:p-6 flex justify-between items-center">
           <div>
             <h1 className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
@@ -64,14 +69,14 @@ function App() {
           </div>
           <button
             onClick={logout}
-            className="flex items-center gap-2 px-3 lg:px-4 py-2 bg-slate-800/50 hover:bg-danger/80 text-slate-300 hover:text-white rounded-xl lg:rounded-lg border border-white/5 hover:border-danger transition-all duration-300 text-sm"
+            className="flex items-center gap-2 px-3 lg:px-4 py-2 bg-white/5 hover:bg-danger/80 text-zinc-300 hover:text-white rounded-xl lg:rounded-lg border border-white/10 hover:border-danger backdrop-blur-md transition-all duration-300 text-sm font-semibold shadow-lg shadow-black/20"
           >
             <LogOut className="w-4 h-4" />
             <span className="hidden lg:inline">Logout</span>
           </button>
         </header>
         
-        <div className="p-4 lg:p-6 flex-1 bg-gradient-to-br from-background to-[#000000]">
+        <div className="p-4 lg:p-6 flex-1 bg-transparent">
           {activeTab === 'manager' && <InventoryManager />}
           {activeTab === 'inventory' && <InventoryIntelligence />}
           {activeTab === 'pricing' && <PriceEngine />}

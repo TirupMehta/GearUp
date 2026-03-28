@@ -1,10 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   body {
-    @apply bg-background text-zinc-100 antialiased font-sans selection:bg-primary/30 selection:text-primary;
+    font-family: 'Outfit', sans-serif;
+    @apply bg-background text-zinc-50 antialiased selection:bg-primary/40 selection:text-white;
   }
 
   /* Global UI/UX Micro Animations */
@@ -13,11 +16,11 @@
   }
 
   button:not(:disabled):hover {
-    @apply -translate-y-[2px];
+    @apply -translate-y-[2px] shadow-lg filter brightness-110;
   }
 
   button:not(:disabled):active {
-    @apply translate-y-[1px] scale-[0.98];
+    @apply translate-y-[1px] scale-[0.96] filter brightness-90;
   }
 
   /* Premium Focus rings */

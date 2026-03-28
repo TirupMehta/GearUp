@@ -39,11 +39,11 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => 
               onClick={() => setActiveTab(item.id)}
               className={`flex-shrink-0 lg:w-full flex items-center gap-2 lg:gap-3 px-4 py-2 lg:py-3 rounded-xl transition-all duration-300 ${
                 isActive 
-                  ? 'bg-primary/10 text-primary font-semibold ring-1 ring-primary/30 shadow-[0_0_15px_rgba(99,102,241,0.1)]' 
+                  ? 'bg-gradient-to-r from-primary to-accent text-white font-bold shadow-[0_0_20px_rgba(99,102,241,0.4)] border border-white/20 scale-[1.02]' 
                   : 'text-zinc-400 hover:bg-white/5 hover:text-white'
               }`}
             >
-              <Icon className={`w-4 h-4 lg:w-5 lg:h-5 ${isActive ? 'text-primary' : ''}`} />
+              <Icon className={`w-4 h-4 lg:w-5 lg:h-5 ${isActive ? 'text-white' : ''}`} />
               <span className="whitespace-nowrap text-sm lg:text-base">{item.label}</span>
             </button>
           );
