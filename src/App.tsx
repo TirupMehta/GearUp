@@ -45,18 +45,13 @@ function App() {
   }
 
   return (
-    <div className="flex flex-col lg:flex-row h-full w-full overflow-hidden bg-background selection:bg-primary/30 selection:text-slate-900 dark:text-white relative z-0">
-      
-      {/* Universal Background Glows */}
-      <div className="absolute top-[-10%] left-[-10%] w-[50rem] h-[50rem] bg-primary/20 rounded-full blur-[150px] pointer-events-none -z-10 animate-pulse-glow" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[40rem] h-[40rem] bg-accent/10 rounded-full blur-[150px] pointer-events-none -z-10" />
-
+    <div className="flex h-screen w-full overflow-hidden bg-background">
       <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
 
-      <main className="flex-1 flex flex-col h-full min-h-0 overflow-y-auto w-full relative pb-20 lg:pb-0 z-10">
-        <header className="sticky top-0 z-10 bg-slate-50/80 dark:bg-[#000000]/80 backdrop-blur-xl border-b border-black/10 dark:border-white/5 p-4 lg:p-6 flex justify-between items-center shrink-0 min-h-[72px]">
+      <main className="flex-1 flex flex-col h-full overflow-y-auto w-full max-w-[calc(100%-320px)] relative">
+        <header className="sticky top-0 z-10 bg-panel/80 backdrop-blur-md border-b border-slate-700/50 p-6 flex justify-between items-center">
           <div>
-            <h1 className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               {activeTab === 'manager' && 'Inventory Manager'}
               {activeTab === 'inventory' && 'Inventory Intelligence'}
               {activeTab === 'pricing' && 'Intelligent Price Engine'}
@@ -69,14 +64,14 @@ function App() {
           </div>
           <button
             onClick={logout}
-            className="flex items-center gap-2 px-3 lg:px-4 py-2 bg-black/5 dark:bg-white/5 hover:bg-danger/80 text-slate-700 dark:text-zinc-300 hover:text-slate-900 dark:text-white rounded-xl lg:rounded-lg border border-black/20 dark:border-white/10 hover:border-danger backdrop-blur-md transition-all duration-300 text-sm font-semibold shadow-lg shadow-black/20"
+            className="flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-danger/80 text-slate-300 hover:text-white rounded-lg border border-slate-700 hover:border-danger transition text-sm"
           >
             <LogOut className="w-4 h-4" />
-            <span className="hidden lg:inline">Logout</span>
+            Logout
           </button>
         </header>
         
-        <div className="p-4 lg:p-6 flex-1 bg-transparent">
+        <div className="p-6 flex-1 bg-gradient-to-br from-background to-[#111827]">
           {activeTab === 'manager' && <InventoryManager />}
           {activeTab === 'inventory' && <InventoryIntelligence />}
           {activeTab === 'pricing' && <PriceEngine />}
