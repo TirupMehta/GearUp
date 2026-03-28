@@ -48,19 +48,19 @@ Be specific with product names. No generic advice.`;
 
   return (
     <div className="space-y-6 animate-fade-in">
-      <div className="bg-slate-900 border border-slate-700/50 rounded-xl p-6 shadow-lg flex justify-between items-center">
+      <div className="bg-[#000000]/40 border border-white/5 rounded-2xl p-6 shadow-[0_0_20px_rgba(255,255,255,0.05)] flex justify-between items-center">
         <div>
           <h3 className="font-semibold text-lg flex items-center gap-2">
             <PackageOpen className="w-5 h-5 text-primary" />
             Full Inventory Manager
           </h3>
-          <p className="text-sm text-slate-400 mt-1">Manually update stock counts or fetch AI recommendations.</p>
+          <p className="text-sm text-zinc-400 mt-1">Manually update stock counts or fetch AI recommendations.</p>
         </div>
         
         <button 
           onClick={generateSnapshot}
           disabled={snapshotLoading}
-          className="bg-accent hover:bg-accent/80 text-white px-5 py-2.5 rounded-lg flex items-center gap-2 transition disabled:opacity-50"
+          className="bg-accent hover:bg-accent/80 text-white px-5 py-2.5 rounded-2xl flex items-center gap-2 transition disabled:opacity-50"
         >
           {snapshotLoading ? <Loader2 className="w-5 h-5 animate-spin" /> : <BrainCircuit className="w-5 h-5" />}
           AI Daily Snapshot
@@ -68,7 +68,7 @@ Be specific with product names. No generic advice.`;
       </div>
 
       {snapshotObj && (
-        <div className="bg-primary/10 border border-primary/50 text-white rounded-xl p-5 shadow-lg">
+        <div className="bg-primary/10 border border-primary/50 text-white rounded-2xl p-5 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
           <div className="flex items-center gap-2 mb-3">
             <BrainCircuit className="w-5 h-5 text-primary" />
             <span className="font-semibold text-primary">AI Daily Snapshot</span>
@@ -77,9 +77,9 @@ Be specific with product names. No generic advice.`;
         </div>
       )}
 
-      <div className="bg-slate-900 border border-slate-700/50 rounded-xl overflow-hidden shadow-lg">
+      <div className="bg-[#000000]/40 border border-white/5 rounded-2xl overflow-hidden shadow-[0_0_20px_rgba(255,255,255,0.05)]">
         <table className="w-full text-sm text-left">
-          <thead className="bg-slate-800/80 text-slate-400">
+          <thead className="bg-white/10 backdrop-blur-xl text-zinc-400">
             <tr>
               <th className="px-6 py-4 font-semibold">Product Name</th>
               <th className="px-6 py-4 font-semibold">Category</th>
@@ -89,9 +89,9 @@ Be specific with product names. No generic advice.`;
           </thead>
           <tbody className="divide-y divide-slate-700/50">
             {allProducts.map((p, idx) => (
-              <tr key={idx} className="hover:bg-slate-800/30 transition">
+              <tr key={idx} className="hover:bg-[#000000]/30 backdrop-blur-sm transition">
                 <td className="px-6 py-4 font-medium text-slate-200">{p.ProductName}</td>
-                <td className="px-6 py-4 text-slate-400">{p.Category}</td>
+                <td className="px-6 py-4 text-zinc-400">{p.Category}</td>
                 <td className="px-6 py-4 text-center text-lg font-semibold text-white">
                   {stockMap[p.ProductName] || 0}
                 </td>
@@ -99,19 +99,19 @@ Be specific with product names. No generic advice.`;
                   <div className="flex justify-end gap-2">
                     <button 
                       onClick={() => updateStock(p.ProductName, -1)}
-                      className="p-2 bg-slate-800 hover:bg-danger/80 hover:text-white rounded-lg transition border border-slate-700 hover:border-danger"
+                      className="p-2 bg-white/5 hover:bg-danger/80 hover:text-white rounded-2xl transition border border-white/5 hover:border-danger"
                     >
                       <Minus className="w-4 h-4" />
                     </button>
                     <button 
                       onClick={() => updateStock(p.ProductName, 1)}
-                      className="p-2 bg-slate-800 hover:bg-primary/80 hover:text-white rounded-lg transition border border-slate-700 hover:border-primary"
+                      className="p-2 bg-white/5 hover:bg-primary/80 hover:text-white rounded-2xl transition border border-white/5 hover:border-primary"
                     >
                       <Plus className="w-4 h-4" />
                     </button>
                     <button 
                       onClick={() => updateStock(p.ProductName, 10)}
-                      className="px-3 py-1 text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg transition border border-slate-700"
+                      className="px-3 py-1 text-xs font-semibold bg-white/5 hover:bg-slate-700 text-zinc-300 rounded-2xl transition border border-white/5"
                     >
                       +10
                     </button>

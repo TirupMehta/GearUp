@@ -46,8 +46,8 @@ export default function BusinessHealth() {
       
       {/* Top Level KPIs */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-slate-900 border border-slate-700/50 rounded-xl p-5 shadow-lg">
-          <div className="text-slate-400 text-sm mb-1 flex justify-between">
+        <div className="bg-[#000000]/40 border border-white/5 rounded-2xl p-5 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
+          <div className="text-zinc-400 text-sm mb-1 flex justify-between">
             Global Health Score
             <Activity className="w-5 h-5 text-accent" />
           </div>
@@ -56,8 +56,8 @@ export default function BusinessHealth() {
           </div>
         </div>
         
-        <div className="bg-slate-900 border border-slate-700/50 rounded-xl p-5 shadow-lg">
-          <div className="text-slate-400 text-sm mb-1 flex justify-between">
+        <div className="bg-[#000000]/40 border border-white/5 rounded-2xl p-5 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
+          <div className="text-zinc-400 text-sm mb-1 flex justify-between">
             Average Run Rate Margin
             <Target className="w-5 h-5 text-primary" />
           </div>
@@ -66,8 +66,8 @@ export default function BusinessHealth() {
           </div>
         </div>
 
-        <div className="bg-slate-900 border border-slate-700/50 rounded-xl p-5 shadow-lg">
-          <div className="text-slate-400 text-sm mb-1 flex justify-between">
+        <div className="bg-[#000000]/40 border border-white/5 rounded-2xl p-5 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
+          <div className="text-zinc-400 text-sm mb-1 flex justify-between">
             Detected Anomalies
             <ShieldAlert className="w-5 h-5 text-warning" />
           </div>
@@ -81,12 +81,12 @@ export default function BusinessHealth() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
         {/* Anomaly Scatter Plot */}
-        <div className="bg-slate-900 border border-slate-700/50 rounded-xl p-6 shadow-lg lg:col-span-2">
+        <div className="bg-[#000000]/40 border border-white/5 rounded-2xl p-6 shadow-[0_0_20px_rgba(255,255,255,0.05)] lg:col-span-2">
           <h3 className="font-semibold text-lg mb-6 flex items-center gap-2">
             <Activity className="w-5 h-5 text-warning" />
             Revenue Anomaly Detection
           </h3>
-          <p className="text-xs text-slate-400 mb-4">
+          <p className="text-xs text-zinc-400 mb-4">
             Identifying days with unnatural sales spikes or drops (&gt; 1.5 standard deviations from mean).
           </p>
           <div className="h-72">
@@ -113,29 +113,29 @@ export default function BusinessHealth() {
         </div>
 
         {/* Warning Readout */}
-        <div className="bg-slate-900 border border-slate-700/50 rounded-xl p-6 shadow-lg">
-           <h3 className="font-semibold text-lg mb-4 flex items-center gap-2 text-slate-300">
+        <div className="bg-[#000000]/40 border border-white/5 rounded-2xl p-6 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
+           <h3 className="font-semibold text-lg mb-4 flex items-center gap-2 text-zinc-300">
             System Diagnosis
           </h3>
           <div className="space-y-4">
-            <div className="bg-slate-800/50 p-4 rounded-lg border border-slate-700/50">
+            <div className="bg-white/5 backdrop-blur-lg p-4 rounded-2xl border border-white/5">
               <h4 className="text-sm font-medium text-slate-200 mb-1 flex items-center gap-2">
                 <TrendingDown className="w-4 h-4 text-warning" />
                 Margin Dilution Risk
               </h4>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-zinc-400">
                 {avgMargin < 15 
                   ? "CRITICAL: Global margins have dropped below 15%. Immediately review price elasticity for top selling products." 
                   : "Stable: Margins are holding steady across the primary product portfolio."}
               </p>
             </div>
             
-             <div className="bg-slate-800/50 p-4 rounded-lg border border-slate-700/50">
+             <div className="bg-white/5 backdrop-blur-lg p-4 rounded-2xl border border-white/5">
               <h4 className="text-sm font-medium text-slate-200 mb-1 flex items-center gap-2">
                 <ShieldAlert className="w-4 h-4 text-danger" />
                 Anomaly Insights
               </h4>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-zinc-400">
                 {anomalyData.anomalies > 5 
                   ? `High volatility detected (${anomalyData.anomalies} anomalies). Inspect Copilot for specific product stockouts on these dates.` 
                   : "Revenue variance is within normal statistical thresholds."}
