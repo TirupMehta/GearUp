@@ -15,6 +15,7 @@ interface DashboardContextType {
   riskScore: number;
   stockMap: Record<string, number>;
   updateStock: (productName: string, change: number) => void;
+  skipUpload: () => void;
 }
 
 const DashboardContext = createContext<DashboardContextType | undefined>(undefined);
@@ -27,6 +28,7 @@ export const DashboardProvider: React.FC<{ children: ReactNode }> = ({ children 
   const [llmApiKey, setLlmApiKey] = useState(localStorage.getItem('shopgenie_apikey') || 'AIzaSyC0sS3KOm-cKlU9Y0IeJBvM23vcMe-iofE');
   const [riskScore, setRiskScore] = useState(0);
   const [stockMap, setStockMap] = useState<Record<string, number>>({});
+  const [hasSkipped, setHasSkipped] = useState(false);
 
   // Helper: get user-scoped collection path using email prefix
   const getUserKey = () => {
@@ -134,7 +136,7 @@ export const DashboardProvider: React.FC<{ children: ReactNode }> = ({ children 
 
   return (
     <DashboardContext.Provider value={{
-      hasData: inventory.length > 0,
+      hasData: inventory.length > 0 || hasSkipped,
       isLoading,
       transactions,
       inventory,
@@ -143,7 +145,8 @@ export const DashboardProvider: React.FC<{ children: ReactNode }> = ({ children 
       loadCsvData,
       riskScore,
       stockMap,
-      updateStock
+      updateStock,
+      skipUpload: () => setHasSkipped(true)
     }}>
       {children}
     </DashboardContext.Provider>

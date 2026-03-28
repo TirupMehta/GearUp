@@ -3,7 +3,7 @@ import { useDashboard } from '../context/DashboardContext';
 import { Upload, Settings, Info } from 'lucide-react';
 
 export const UploadScreen: React.FC = () => {
-  const { loadCsvData, isLoading, llmApiKey, setLlmApiKey } = useDashboard();
+  const { loadCsvData, isLoading, llmApiKey, setLlmApiKey, skipUpload } = useDashboard();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [showSettings, setShowSettings] = useState(false);
   const [tempKey, setTempKey] = useState(llmApiKey);
@@ -109,6 +109,15 @@ export const UploadScreen: React.FC = () => {
           <p>
             Expected CSV Columns: <span className="font-mono text-accent">Date, ProductName, Category, QuantitySold, SalePrice, UnitCost</span>
           </p>
+        </div>
+
+        <div className="mt-6 flex justify-center">
+          <button 
+            onClick={skipUpload}
+            className="text-sm text-slate-400 hover:text-white transition"
+          >
+            Skip for now (continue without file)
+          </button>
         </div>
       </div>
     </div>
