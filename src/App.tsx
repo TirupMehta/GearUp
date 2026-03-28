@@ -3,6 +3,7 @@ import { useAuth } from './context/AuthContext';
 import { useDashboard } from './context/DashboardContext';
 import { LoginScreen } from './components/LoginScreen';
 import { UploadScreen } from './components/UploadScreen';
+import { SplashScreen } from './components/SplashScreen';
 import { Sidebar } from './components/Sidebar';
 import { Copilot } from './components/Copilot';
 import { LogOut } from 'lucide-react';
@@ -17,6 +18,12 @@ function App() {
   const { user, loading, logout } = useAuth();
   const { hasData } = useDashboard();
   const [activeTab, setActiveTab] = useState('manager');
+  const [showSplash, setShowSplash] = useState(true);
+
+  // Show splash animation before anything else
+  if (showSplash) {
+    return <SplashScreen onComplete={() => setShowSplash(false)} />;
+  }
 
   // Show loading while Firebase checks session
   if (loading) {

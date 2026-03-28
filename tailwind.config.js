@@ -17,6 +17,22 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
+      keyframes: {
+        popOut: {
+          '0%': { transform: 'scale(0.5) translateY(20px)', opacity: '0' },
+          '20%': { transform: 'scale(1.2) translateY(-40px)', opacity: '1' },
+          '80%': { transform: 'scale(1) translateY(-100px)', opacity: '1' },
+          '100%': { transform: 'scale(0.8) translateY(-120px)', opacity: '0' },
+        },
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'scale(0.9)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        }
+      },
+      animation: {
+        popOut: 'popOut 1.5s ease-out forwards',
+        fadeIn: 'fadeIn 0.5s ease-out forwards',
       }
     },
   },
