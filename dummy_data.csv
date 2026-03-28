@@ -1,0 +1,241 @@
+Date,ProductName,Category,QuantitySold,SalePrice,UnitCost
+2023-03-01,Boat Airdopes 141,Audio,5,1299,900
+2023-03-01,iPhone 14 Pro Max Clear Case,Accessories,1,450,150
+2023-03-01,Generic Type-C Fast Data Cable,Accessories,12,150,50
+2023-03-01,Spigen Rugged Armor Case Y20,Accessories,0,599,250
+2023-03-01,Portronics 10000mAh Power Bank,Power,2,899,600
+2023-03-01,Mi 33W SonicCharge Adapter,Power,6,599,400
+2023-03-01,JBL C100SI Wired Earphones,Audio,1,599,350
+2023-03-01,SanDisk 64GB Ultra microSD,Storage,4,450,300
+2023-03-02,Boat Airdopes 141,Audio,4,1299,900
+2023-03-02,iPhone 14 Pro Max Clear Case,Accessories,0,450,150
+2023-03-02,Generic Type-C Fast Data Cable,Accessories,15,150,50
+2023-03-02,Spigen Rugged Armor Case Y20,Accessories,1,599,250
+2023-03-02,Portronics 10000mAh Power Bank,Power,3,899,600
+2023-03-02,Mi 33W SonicCharge Adapter,Power,8,599,400
+2023-03-02,JBL C100SI Wired Earphones,Audio,0,599,350
+2023-03-02,SanDisk 64GB Ultra microSD,Storage,5,450,300
+2023-03-03,Boat Airdopes 141,Audio,6,1299,900
+2023-03-03,iPhone 14 Pro Max Clear Case,Accessories,1,450,150
+2023-03-03,Generic Type-C Fast Data Cable,Accessories,10,150,50
+2023-03-03,Spigen Rugged Armor Case Y20,Accessories,0,599,250
+2023-03-03,Portronics 10000mAh Power Bank,Power,2,899,600
+2023-03-03,Mi 33W SonicCharge Adapter,Power,5,599,400
+2023-03-03,JBL C100SI Wired Earphones,Audio,1,599,350
+2023-03-03,SanDisk 64GB Ultra microSD,Storage,6,450,300
+2023-03-04,Boat Airdopes 141,Audio,8,1299,900
+2023-03-04,iPhone 14 Pro Max Clear Case,Accessories,0,450,150
+2023-03-04,Generic Type-C Fast Data Cable,Accessories,18,150,50
+2023-03-04,Spigen Rugged Armor Case Y20,Accessories,0,599,250
+2023-03-04,Portronics 10000mAh Power Bank,Power,4,899,600
+2023-03-04,Mi 33W SonicCharge Adapter,Power,10,599,400
+2023-03-04,JBL C100SI Wired Earphones,Audio,0,599,350
+2023-03-04,SanDisk 64GB Ultra microSD,Storage,7,450,300
+2023-03-05,Boat Airdopes 141,Audio,7,1299,900
+2023-03-05,iPhone 14 Pro Max Clear Case,Accessories,1,450,150
+2023-03-05,Generic Type-C Fast Data Cable,Accessories,14,150,50
+2023-03-05,Spigen Rugged Armor Case Y20,Accessories,0,599,250
+2023-03-05,Portronics 10000mAh Power Bank,Power,3,899,600
+2023-03-05,Mi 33W SonicCharge Adapter,Power,7,599,400
+2023-03-05,JBL C100SI Wired Earphones,Audio,2,599,350
+2023-03-05,SanDisk 64GB Ultra microSD,Storage,5,450,300
+2023-03-06,Boat Airdopes 141,Audio,5,1299,900
+2023-03-06,iPhone 14 Pro Max Clear Case,Accessories,0,450,150
+2023-03-06,Generic Type-C Fast Data Cable,Accessories,11,150,50
+2023-03-06,Spigen Rugged Armor Case Y20,Accessories,1,599,250
+2023-03-06,Portronics 10000mAh Power Bank,Power,2,899,600
+2023-03-06,Mi 33W SonicCharge Adapter,Power,6,599,400
+2023-03-06,JBL C100SI Wired Earphones,Audio,0,599,350
+2023-03-06,SanDisk 64GB Ultra microSD,Storage,4,450,300
+2023-03-07,Boat Airdopes 141,Audio,6,1299,900
+2023-03-07,iPhone 14 Pro Max Clear Case,Accessories,0,450,150
+2023-03-07,Generic Type-C Fast Data Cable,Accessories,13,150,50
+2023-03-07,Spigen Rugged Armor Case Y20,Accessories,0,599,250
+2023-03-07,Portronics 10000mAh Power Bank,Power,1,899,600
+2023-03-07,Mi 33W SonicCharge Adapter,Power,5,599,400
+2023-03-07,JBL C100SI Wired Earphones,Audio,1,599,350
+2023-03-07,SanDisk 64GB Ultra microSD,Storage,5,450,300
+2023-03-08,Boat Airdopes 141,Audio,4,1299,900
+2023-03-08,iPhone 14 Pro Max Clear Case,Accessories,1,450,150
+2023-03-08,Generic Type-C Fast Data Cable,Accessories,16,150,50
+2023-03-08,Spigen Rugged Armor Case Y20,Accessories,0,599,250
+2023-03-08,Portronics 10000mAh Power Bank,Power,3,899,600
+2023-03-08,Mi 33W SonicCharge Adapter,Power,8,599,400
+2023-03-08,JBL C100SI Wired Earphones,Audio,0,599,350
+2023-03-08,SanDisk 64GB Ultra microSD,Storage,7,450,300
+2023-03-09,Boat Airdopes 141,Audio,5,1299,900
+2023-03-09,iPhone 14 Pro Max Clear Case,Accessories,0,450,150
+2023-03-09,Generic Type-C Fast Data Cable,Accessories,12,150,50
+2023-03-09,Spigen Rugged Armor Case Y20,Accessories,1,599,250
+2023-03-09,Portronics 10000mAh Power Bank,Power,2,899,600
+2023-03-09,Mi 33W SonicCharge Adapter,Power,5,599,400
+2023-03-09,JBL C100SI Wired Earphones,Audio,0,599,350
+2023-03-09,SanDisk 64GB Ultra microSD,Storage,4,450,300
+2023-03-10,Boat Airdopes 141,Audio,9,1299,900
+2023-03-10,iPhone 14 Pro Max Clear Case,Accessories,0,450,150
+2023-03-10,Generic Type-C Fast Data Cable,Accessories,20,150,50
+2023-03-10,Spigen Rugged Armor Case Y20,Accessories,0,599,250
+2023-03-10,Portronics 10000mAh Power Bank,Power,5,899,600
+2023-03-10,Mi 33W SonicCharge Adapter,Power,12,599,400
+2023-03-10,JBL C100SI Wired Earphones,Audio,1,599,350
+2023-03-10,SanDisk 64GB Ultra microSD,Storage,8,450,300
+2023-03-11,Boat Airdopes 141,Audio,6,1299,900
+2023-03-11,iPhone 14 Pro Max Clear Case,Accessories,1,450,150
+2023-03-11,Generic Type-C Fast Data Cable,Accessories,14,150,50
+2023-03-11,Spigen Rugged Armor Case Y20,Accessories,0,599,250
+2023-03-11,Portronics 10000mAh Power Bank,Power,2,899,600
+2023-03-11,Mi 33W SonicCharge Adapter,Power,7,599,400
+2023-03-11,JBL C100SI Wired Earphones,Audio,0,599,350
+2023-03-11,SanDisk 64GB Ultra microSD,Storage,5,450,300
+2023-03-12,Boat Airdopes 141,Audio,7,1299,900
+2023-03-12,iPhone 14 Pro Max Clear Case,Accessories,0,450,150
+2023-03-12,Generic Type-C Fast Data Cable,Accessories,15,150,50
+2023-03-12,Spigen Rugged Armor Case Y20,Accessories,0,599,250
+2023-03-12,Portronics 10000mAh Power Bank,Power,3,899,600
+2023-03-12,Mi 33W SonicCharge Adapter,Power,9,599,400
+2023-03-12,JBL C100SI Wired Earphones,Audio,1,599,350
+2023-03-12,SanDisk 64GB Ultra microSD,Storage,6,450,300
+2023-03-13,Boat Airdopes 141,Audio,5,1299,900
+2023-03-13,iPhone 14 Pro Max Clear Case,Accessories,0,450,150
+2023-03-13,Generic Type-C Fast Data Cable,Accessories,12,150,50
+2023-03-13,Spigen Rugged Armor Case Y20,Accessories,1,599,250
+2023-03-13,Portronics 10000mAh Power Bank,Power,2,899,600
+2023-03-13,Mi 33W SonicCharge Adapter,Power,6,599,400
+2023-03-13,JBL C100SI Wired Earphones,Audio,0,599,350
+2023-03-13,SanDisk 64GB Ultra microSD,Storage,4,450,300
+2023-03-14,Boat Airdopes 141,Audio,4,1299,900
+2023-03-14,iPhone 14 Pro Max Clear Case,Accessories,1,450,150
+2023-03-14,Generic Type-C Fast Data Cable,Accessories,11,150,50
+2023-03-14,Spigen Rugged Armor Case Y20,Accessories,0,599,250
+2023-03-14,Portronics 10000mAh Power Bank,Power,1,899,600
+2023-03-14,Mi 33W SonicCharge Adapter,Power,5,599,400
+2023-03-14,JBL C100SI Wired Earphones,Audio,0,599,350
+2023-03-14,SanDisk 64GB Ultra microSD,Storage,4,450,300
+2023-03-15,Boat Airdopes 141,Audio,8,1299,900
+2023-03-15,iPhone 14 Pro Max Clear Case,Accessories,0,450,150
+2023-03-15,Generic Type-C Fast Data Cable,Accessories,18,150,50
+2023-03-15,Spigen Rugged Armor Case Y20,Accessories,0,599,250
+2023-03-15,Portronics 10000mAh Power Bank,Power,4,899,600
+2023-03-15,Mi 33W SonicCharge Adapter,Power,11,599,400
+2023-03-15,JBL C100SI Wired Earphones,Audio,1,599,350
+2023-03-15,SanDisk 64GB Ultra microSD,Storage,8,450,300
+2023-03-16,Boat Airdopes 141,Audio,6,1299,900
+2023-03-16,iPhone 14 Pro Max Clear Case,Accessories,0,450,150
+2023-03-16,Generic Type-C Fast Data Cable,Accessories,13,150,50
+2023-03-16,Spigen Rugged Armor Case Y20,Accessories,0,599,250
+2023-03-16,Portronics 10000mAh Power Bank,Power,2,899,600
+2023-03-16,Mi 33W SonicCharge Adapter,Power,6,599,400
+2023-03-16,JBL C100SI Wired Earphones,Audio,0,599,350
+2023-03-16,SanDisk 64GB Ultra microSD,Storage,5,450,300
+2023-03-17,Boat Airdopes 141,Audio,5,1299,900
+2023-03-17,iPhone 14 Pro Max Clear Case,Accessories,1,450,150
+2023-03-17,Generic Type-C Fast Data Cable,Accessories,10,150,50
+2023-03-17,Spigen Rugged Armor Case Y20,Accessories,1,599,250
+2023-03-17,Portronics 10000mAh Power Bank,Power,1,899,600
+2023-03-17,Mi 33W SonicCharge Adapter,Power,4,599,400
+2023-03-17,JBL C100SI Wired Earphones,Audio,0,599,350
+2023-03-17,SanDisk 64GB Ultra microSD,Storage,3,450,300
+2023-03-18,Boat Airdopes 141,Audio,7,1299,900
+2023-03-18,iPhone 14 Pro Max Clear Case,Accessories,0,450,150
+2023-03-18,Generic Type-C Fast Data Cable,Accessories,15,150,50
+2023-03-18,Spigen Rugged Armor Case Y20,Accessories,0,599,250
+2023-03-18,Portronics 10000mAh Power Bank,Power,3,899,600
+2023-03-18,Mi 33W SonicCharge Adapter,Power,8,599,400
+2023-03-18,JBL C100SI Wired Earphones,Audio,1,599,350
+2023-03-18,SanDisk 64GB Ultra microSD,Storage,6,450,300
+2023-03-19,Boat Airdopes 141,Audio,4,1299,900
+2023-03-19,iPhone 14 Pro Max Clear Case,Accessories,1,450,150
+2023-03-19,Generic Type-C Fast Data Cable,Accessories,11,150,50
+2023-03-19,Spigen Rugged Armor Case Y20,Accessories,0,599,250
+2023-03-19,Portronics 10000mAh Power Bank,Power,2,899,600
+2023-03-19,Mi 33W SonicCharge Adapter,Power,5,599,400
+2023-03-19,JBL C100SI Wired Earphones,Audio,0,599,350
+2023-03-19,SanDisk 64GB Ultra microSD,Storage,4,450,300
+2023-03-20,Boat Airdopes 141,Audio,3,1299,900
+2023-03-20,iPhone 14 Pro Max Clear Case,Accessories,0,450,150
+2023-03-20,Generic Type-C Fast Data Cable,Accessories,9,150,50
+2023-03-20,Spigen Rugged Armor Case Y20,Accessories,1,599,250
+2023-03-20,Portronics 10000mAh Power Bank,Power,1,899,600
+2023-03-20,Mi 33W SonicCharge Adapter,Power,4,599,400
+2023-03-20,JBL C100SI Wired Earphones,Audio,0,599,350
+2023-03-20,SanDisk 64GB Ultra microSD,Storage,3,450,300
+2023-03-21,Boat Airdopes 141,Audio,8,1299,900
+2023-03-21,iPhone 14 Pro Max Clear Case,Accessories,0,450,150
+2023-03-21,Generic Type-C Fast Data Cable,Accessories,19,150,50
+2023-03-21,Spigen Rugged Armor Case Y20,Accessories,0,599,250
+2023-03-21,Portronics 10000mAh Power Bank,Power,5,899,600
+2023-03-21,Mi 33W SonicCharge Adapter,Power,12,599,400
+2023-03-21,JBL C100SI Wired Earphones,Audio,1,599,350
+2023-03-21,SanDisk 64GB Ultra microSD,Storage,9,450,300
+2023-03-22,Boat Airdopes 141,Audio,5,1299,900
+2023-03-22,iPhone 14 Pro Max Clear Case,Accessories,1,450,150
+2023-03-22,Generic Type-C Fast Data Cable,Accessories,14,150,50
+2023-03-22,Spigen Rugged Armor Case Y20,Accessories,0,599,250
+2023-03-22,Portronics 10000mAh Power Bank,Power,2,899,600
+2023-03-22,Mi 33W SonicCharge Adapter,Power,7,599,400
+2023-03-22,JBL C100SI Wired Earphones,Audio,0,599,350
+2023-03-22,SanDisk 64GB Ultra microSD,Storage,5,450,300
+2023-03-23,Boat Airdopes 141,Audio,6,1299,900
+2023-03-23,iPhone 14 Pro Max Clear Case,Accessories,0,450,150
+2023-03-23,Generic Type-C Fast Data Cable,Accessories,15,150,50
+2023-03-23,Spigen Rugged Armor Case Y20,Accessories,0,599,250
+2023-03-23,Portronics 10000mAh Power Bank,Power,3,899,600
+2023-03-23,Mi 33W SonicCharge Adapter,Power,8,599,400
+2023-03-23,JBL C100SI Wired Earphones,Audio,1,599,350
+2023-03-23,SanDisk 64GB Ultra microSD,Storage,6,450,300
+2023-03-24,Boat Airdopes 141,Audio,4,1299,900
+2023-03-24,iPhone 14 Pro Max Clear Case,Accessories,0,450,150
+2023-03-24,Generic Type-C Fast Data Cable,Accessories,12,150,50
+2023-03-24,Spigen Rugged Armor Case Y20,Accessories,1,599,250
+2023-03-24,Portronics 10000mAh Power Bank,Power,2,899,600
+2023-03-24,Mi 33W SonicCharge Adapter,Power,6,599,400
+2023-03-24,JBL C100SI Wired Earphones,Audio,0,599,350
+2023-03-24,SanDisk 64GB Ultra microSD,Storage,5,450,300
+2023-03-25,Boat Airdopes 141,Audio,7,1299,900
+2023-03-25,iPhone 14 Pro Max Clear Case,Accessories,0,450,150
+2023-03-25,Generic Type-C Fast Data Cable,Accessories,16,150,50
+2023-03-25,Spigen Rugged Armor Case Y20,Accessories,0,599,250
+2023-03-25,Portronics 10000mAh Power Bank,Power,4,899,600
+2023-03-25,Mi 33W SonicCharge Adapter,Power,9,599,400
+2023-03-25,JBL C100SI Wired Earphones,Audio,1,599,350
+2023-03-25,SanDisk 64GB Ultra microSD,Storage,7,450,300
+2023-03-26,Boat Airdopes 141,Audio,5,1299,900
+2023-03-26,iPhone 14 Pro Max Clear Case,Accessories,1,450,150
+2023-03-26,Generic Type-C Fast Data Cable,Accessories,11,150,50
+2023-03-26,Spigen Rugged Armor Case Y20,Accessories,0,599,250
+2023-03-26,Portronics 10000mAh Power Bank,Power,1,899,600
+2023-03-26,Mi 33W SonicCharge Adapter,Power,5,599,400
+2023-03-26,JBL C100SI Wired Earphones,Audio,0,599,350
+2023-03-26,SanDisk 64GB Ultra microSD,Storage,4,450,300
+2023-03-27,Boat Airdopes 141,Audio,4,1299,900
+2023-03-27,iPhone 14 Pro Max Clear Case,Accessories,0,450,150
+2023-03-27,Generic Type-C Fast Data Cable,Accessories,10,150,50
+2023-03-27,Spigen Rugged Armor Case Y20,Accessories,1,599,250
+2023-03-27,Portronics 10000mAh Power Bank,Power,1,899,600
+2023-03-27,Mi 33W SonicCharge Adapter,Power,3,599,400
+2023-03-27,JBL C100SI Wired Earphones,Audio,0,599,350
+2023-03-27,SanDisk 64GB Ultra microSD,Storage,3,450,300
+2023-03-28,Boat Airdopes 141,Audio,8,1299,900
+2023-03-28,iPhone 14 Pro Max Clear Case,Accessories,0,450,150
+2023-03-28,Generic Type-C Fast Data Cable,Accessories,21,150,50
+2023-03-28,Spigen Rugged Armor Case Y20,Accessories,0,599,250
+2023-03-28,Portronics 10000mAh Power Bank,Power,4,899,600
+2023-03-28,Mi 33W SonicCharge Adapter,Power,11,599,400
+2023-03-28,JBL C100SI Wired Earphones,Audio,1,599,350
+2023-03-28,SanDisk 64GB Ultra microSD,Storage,8,450,300
+2023-03-29,Boat Airdopes 141,Audio,6,1299,900
+2023-03-29,iPhone 14 Pro Max Clear Case,Accessories,1,450,150
+2023-03-29,Generic Type-C Fast Data Cable,Accessories,14,150,50
+2023-03-29,Spigen Rugged Armor Case Y20,Accessories,0,599,250
+2023-03-29,Portronics 10000mAh Power Bank,Power,3,899,600
+2023-03-29,Mi 33W SonicCharge Adapter,Power,7,599,400
+2023-03-29,JBL C100SI Wired Earphones,Audio,0,599,350
+2023-03-29,SanDisk 64GB Ultra microSD,Storage,6,450,300
+2023-03-30,Boat Airdopes 141,Audio,5,1299,900
+2023-03-30,iPhone 14 Pro Max Clear Case,Accessories,0,450,150
+2023-03-30,Generic Type-C Fast Data Cable,Accessories,12,150,50
+2023-03-30,Spigen Rugged Armor Case Y20,Accessories,1,599,250
+2023-03-30,Portronics 10000mAh Power Bank,Power,2,899,600
+2023-03-30,Mi 33W SonicCharge Adapter,Power,5,599,400
+2023-03-30,JBL C100SI Wired Earphones,Audio,0,599,350
+2023-03-30,SanDisk 64GB Ultra microSD,Storage,4,450,300

@@ -1,0 +1,126 @@
+Date,ProductName,Category,QuantitySold,SalePrice,UnitCost
+2023-01-01,Premium Milk 1L,Dairy,50,4.50,3.00
+2023-01-01,Artisan Bread,Bakery,30,5.00,2.50
+2023-01-01,Avocado (Organic),Produce,20,2.50,1.20
+2023-01-01,Aged Cheddar,Dairy,5,12.00,8.00
+2023-01-01,Almond Butter,Pantry,1,14.00,10.00
+2023-01-02,Premium Milk 1L,Dairy,55,4.50,3.00
+2023-01-02,Artisan Bread,Bakery,35,5.00,2.50
+2023-01-02,Avocado (Organic),Produce,18,2.50,1.20
+2023-01-02,Aged Cheddar,Dairy,6,12.00,8.00
+2023-01-02,Almond Butter,Pantry,0,14.00,10.00
+2023-01-03,Premium Milk 1L,Dairy,48,4.50,3.00
+2023-01-03,Artisan Bread,Bakery,28,5.00,2.50
+2023-01-03,Avocado (Organic),Produce,25,2.50,1.20
+2023-01-03,Aged Cheddar,Dairy,4,12.00,8.00
+2023-01-03,Almond Butter,Pantry,2,14.00,10.00
+2023-01-04,Premium Milk 1L,Dairy,60,4.50,3.00
+2023-01-04,Artisan Bread,Bakery,40,5.00,2.50
+2023-01-04,Avocado (Organic),Produce,15,2.50,1.20
+2023-01-04,Aged Cheddar,Dairy,8,12.00,8.00
+2023-01-04,Almond Butter,Pantry,0,14.00,10.00
+2023-01-05,Premium Milk 1L,Dairy,52,4.50,3.00
+2023-01-05,Artisan Bread,Bakery,32,5.00,2.50
+2023-01-05,Avocado (Organic),Produce,22,2.50,1.20
+2023-01-05,Aged Cheddar,Dairy,5,12.00,8.00
+2023-01-05,Almond Butter,Pantry,1,14.00,10.00
+2023-01-06,Premium Milk 1L,Dairy,58,4.50,3.00
+2023-01-06,Artisan Bread,Bakery,38,5.00,2.50
+2023-01-06,Avocado (Organic),Produce,19,2.50,1.20
+2023-01-06,Aged Cheddar,Dairy,7,12.00,8.00
+2023-01-06,Almond Butter,Pantry,0,14.00,10.00
+2023-01-07,Premium Milk 1L,Dairy,65,4.50,3.00
+2023-01-07,Artisan Bread,Bakery,45,5.00,2.50
+2023-01-07,Avocado (Organic),Produce,28,2.50,1.20
+2023-01-07,Aged Cheddar,Dairy,9,12.00,8.00
+2023-01-07,Almond Butter,Pantry,0,14.00,10.00
+2023-01-08,Premium Milk 1L,Dairy,55,4.50,3.00
+2023-01-08,Artisan Bread,Bakery,35,5.00,2.50
+2023-01-08,Avocado (Organic),Produce,20,2.50,1.20
+2023-01-08,Aged Cheddar,Dairy,6,12.00,8.00
+2023-01-08,Almond Butter,Pantry,1,14.00,10.00
+2023-01-09,Premium Milk 1L,Dairy,50,4.50,3.00
+2023-01-09,Artisan Bread,Bakery,30,5.00,2.50
+2023-01-09,Avocado (Organic),Produce,22,2.50,1.20
+2023-01-09,Aged Cheddar,Dairy,5,12.00,8.00
+2023-01-09,Almond Butter,Pantry,0,14.00,10.00
+2023-01-10,Premium Milk 1L,Dairy,120,4.50,3.00
+2023-01-10,Artisan Bread,Bakery,30,5.00,2.50
+2023-01-10,Avocado (Organic),Produce,22,2.50,1.20
+2023-01-10,Aged Cheddar,Dairy,5,12.00,8.00
+2023-01-10,Almond Butter,Pantry,0,14.00,10.00
+2023-01-11,Premium Milk 1L,Dairy,53,4.50,3.00
+2023-01-11,Artisan Bread,Bakery,33,5.00,2.50
+2023-01-11,Avocado (Organic),Produce,21,2.50,1.20
+2023-01-11,Aged Cheddar,Dairy,5,12.00,8.00
+2023-01-11,Almond Butter,Pantry,1,14.00,10.00
+2023-01-12,Premium Milk 1L,Dairy,57,4.50,3.00
+2023-01-12,Artisan Bread,Bakery,37,5.00,2.50
+2023-01-12,Avocado (Organic),Produce,19,2.50,1.20
+2023-01-12,Aged Cheddar,Dairy,7,12.00,8.00
+2023-01-12,Almond Butter,Pantry,0,14.00,10.00
+2023-01-13,Premium Milk 1L,Dairy,62,4.50,3.00
+2023-01-13,Artisan Bread,Bakery,42,5.00,2.50
+2023-01-13,Avocado (Organic),Produce,26,2.50,1.20
+2023-01-13,Aged Cheddar,Dairy,8,12.00,8.00
+2023-01-13,Almond Butter,Pantry,0,14.00,10.00
+2023-01-14,Premium Milk 1L,Dairy,68,4.50,3.00
+2023-01-14,Artisan Bread,Bakery,48,5.00,2.50
+2023-01-14,Avocado (Organic),Produce,30,2.50,1.20
+2023-01-14,Aged Cheddar,Dairy,10,12.00,8.00
+2023-01-14,Almond Butter,Pantry,0,14.00,10.00
+2023-01-15,Premium Milk 1L,Dairy,55,4.50,3.00
+2023-01-15,Artisan Bread,Bakery,35,5.00,2.50
+2023-01-15,Avocado (Organic),Produce,20,2.50,1.20
+2023-01-15,Aged Cheddar,Dairy,6,12.00,8.00
+2023-01-15,Almond Butter,Pantry,1,14.00,10.00
+2023-01-16,Premium Milk 1L,Dairy,51,4.50,3.00
+2023-01-16,Artisan Bread,Bakery,31,5.00,2.50
+2023-01-16,Avocado (Organic),Produce,23,2.50,1.20
+2023-01-16,Aged Cheddar,Dairy,5,12.00,8.00
+2023-01-16,Almond Butter,Pantry,0,14.00,10.00
+2023-01-17,Premium Milk 1L,Dairy,49,4.50,3.00
+2023-01-17,Artisan Bread,Bakery,29,5.00,2.50
+2023-01-17,Avocado (Organic),Produce,24,2.50,1.20
+2023-01-17,Aged Cheddar,Dairy,4,12.00,8.00
+2023-01-17,Almond Butter,Pantry,2,14.00,10.00
+2023-01-18,Premium Milk 1L,Dairy,56,4.50,3.00
+2023-01-18,Artisan Bread,Bakery,36,5.00,2.50
+2023-01-18,Avocado (Organic),Produce,18,2.50,1.20
+2023-01-18,Aged Cheddar,Dairy,7,12.00,8.00
+2023-01-18,Almond Butter,Pantry,0,14.00,10.00
+2023-01-19,Premium Milk 1L,Dairy,45,4.50,3.00
+2023-01-19,Artisan Bread,Bakery,25,5.00,2.50
+2023-01-19,Avocado (Organic),Produce,15,2.50,1.20
+2023-01-19,Aged Cheddar,Dairy,3,12.00,8.00
+2023-01-19,Almond Butter,Pantry,0,14.00,10.00
+2023-01-20,Premium Milk 1L,Dairy,43,4.50,3.00
+2023-01-20,Artisan Bread,Bakery,23,5.00,2.50
+2023-01-20,Avocado (Organic),Produce,14,2.50,1.20
+2023-01-20,Aged Cheddar,Dairy,3,12.00,8.00
+2023-01-20,Almond Butter,Pantry,0,14.00,10.00
+2023-01-21,Premium Milk 1L,Dairy,40,4.50,3.00
+2023-01-21,Artisan Bread,Bakery,20,5.00,2.50
+2023-01-21,Avocado (Organic),Produce,12,2.50,1.20
+2023-01-21,Aged Cheddar,Dairy,2,12.00,8.00
+2023-01-21,Almond Butter,Pantry,0,14.00,10.00
+2023-01-22,Premium Milk 1L,Dairy,38,4.50,3.00
+2023-01-22,Artisan Bread,Bakery,18,5.00,2.50
+2023-01-22,Avocado (Organic),Produce,10,2.50,1.20
+2023-01-22,Aged Cheddar,Dairy,1,12.00,8.00
+2023-01-22,Almond Butter,Pantry,0,14.00,10.00
+2023-01-23,Premium Milk 1L,Dairy,35,4.50,3.00
+2023-01-23,Artisan Bread,Bakery,15,5.00,2.50
+2023-01-23,Avocado (Organic),Produce,8,2.50,1.20
+2023-01-23,Aged Cheddar,Dairy,1,12.00,8.00
+2023-01-23,Almond Butter,Pantry,0,14.00,10.00
+2023-01-24,Premium Milk 1L,Dairy,30,4.50,3.00
+2023-01-24,Artisan Bread,Bakery,10,5.00,2.50
+2023-01-24,Avocado (Organic),Produce,5,2.50,1.20
+2023-01-24,Aged Cheddar,Dairy,0,12.00,8.00
+2023-01-24,Almond Butter,Pantry,0,14.00,10.00
+2023-01-25,Premium Milk 1L,Dairy,25,4.50,3.00
+2023-01-25,Artisan Bread,Bakery,5,5.00,2.50
+2023-01-25,Avocado (Organic),Produce,2,2.50,1.20
+2023-01-25,Aged Cheddar,Dairy,0,12.00,8.00
+2023-01-25,Almond Butter,Pantry,0,14.00,10.00
