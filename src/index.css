@@ -4,8 +4,34 @@
 
 @layer base {
   body {
-    @apply bg-background text-white antialiased font-sans;
+    @apply bg-background text-zinc-100 antialiased font-sans selection:bg-primary/30 selection:text-primary;
   }
+
+  /* Global UI/UX Micro Animations */
+  button, a {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  button:not(:disabled):hover {
+    @apply -translate-y-[2px];
+  }
+
+  button:not(:disabled):active {
+    @apply translate-y-[1px] scale-[0.98];
+  }
+
+  /* Premium Focus rings */
+  input:focus, textarea:focus {
+    @apply outline-none ring-2 ring-primary/50 border-primary transition-all duration-300;
+  }
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Custom scrollbar for dark theme */
