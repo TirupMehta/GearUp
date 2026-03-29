@@ -29,7 +29,7 @@ export const DashboardProvider: React.FC<{ children: ReactNode }> = ({ children 
   const [llmApiKey, setLlmApiKey] = useState((import.meta as any).env?.VITE_GEMINI_API_KEY || localStorage.getItem('shopgenie_apikey') || '');
   const [riskScore, setRiskScore] = useState(0);
   const [stockMap, setStockMap] = useState<Record<string, number>>({});
-  const [hasSkipped, setHasSkipped] = useState(false);
+  const [showDashboard, setShowDashboard] = useState(false);
 
   const getInventoryPath = () => `users/${user!.uid}/inventory`;
 
@@ -39,7 +39,7 @@ export const DashboardProvider: React.FC<{ children: ReactNode }> = ({ children 
       setInventory([]);
       setTransactions([]);
       setStockMap({});
-      setHasSkipped(false);
+      setShowDashboard(false);
       return;
     }
     const fetchFromFirestore = async () => {
@@ -148,6 +148,7 @@ export const DashboardProvider: React.FC<{ children: ReactNode }> = ({ children 
         }
       }
       setStockMap(newStockMap);
+      setShowDashboard(true);
     } catch (error) {
       console.error('Failed to load CSV', error);
       alert('Error validating CSV. Please ensure it has: Date, ProductName, Category, QuantitySold, SalePrice, UnitCost.');
@@ -158,7 +159,7 @@ export const DashboardProvider: React.FC<{ children: ReactNode }> = ({ children 
 
   return (
     <DashboardContext.Provider value={{
-      hasData: inventory.length > 0 || hasSkipped,
+      hasData: showDashboard,
       isLoading,
       transactions,
       inventory,
@@ -168,7 +169,7 @@ export const DashboardProvider: React.FC<{ children: ReactNode }> = ({ children 
       riskScore,
       stockMap,
       updateStock,
-      skipUpload: () => setHasSkipped(true),
+      skipUpload: () => setShowDashboard(true),
     }}>
       {children}
     </DashboardContext.Provider>
