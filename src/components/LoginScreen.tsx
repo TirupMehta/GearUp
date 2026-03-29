@@ -44,7 +44,7 @@ export const LoginScreen: React.FC = () => {
           <h1 className="text-4xl font-extrabold text-primary mb-1">
             ShopGenie AI
           </h1>
-          <p className="text-text-muted font-medium text-sm">Your AI-Powered Business Copilot</p>
+          <p className="text-text-muted font-medium text-sm">Your AI-Powered Business StockBuddy</p>
         </div>
 
         {/* Theme Toggle */}
@@ -117,7 +117,7 @@ export const LoginScreen: React.FC = () => {
               disabled={loading}
               className="w-full py-4 bg-gradient-to-r from-[#1e40af] to-[#1e3a8a] text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-[#1e40af]/30 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3 mt-4 disabled:opacity-50"
             >
-              {loading ? 'Please wait...' : (isSignup ? 'Create Account' : 'Sign In to Copilot')}
+              {loading ? 'Please wait...' : (isSignup ? 'Create Account' : 'Sign In to StockBuddy')}
               {!loading && <ArrowRight className="w-5 h-5" />}
             </button>
           </form>

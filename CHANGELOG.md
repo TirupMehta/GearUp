@@ -8,8 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Core architecture for ShopGenie AI including Inventory Intelligence, Intelligent Price Engine, AI Marketing Generator, and Business Health Dashboard.
-- Google Gemini AI integration for Context-Aware Copilot, Weekly Battleplan, and Marketing content generation.
+- Core architecture for RevGenie AI including Pipeline Intelligence, Deal Simulator, AI Sequence Generator, and Revenue Dashboard.
+- Google Gemini AI integration for Context-Aware StockBuddy, Weekly Battleplan, and Marketing content generation.
 - Full responsive frontend built with React, Vite, and Tailwind CSS.
 - Express + MongoDB backend for data persistence and syncing.
 - CSV parsing functionality using PapaParse.

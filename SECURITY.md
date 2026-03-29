@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-Currently, only the latest release of ShopGenie AI is supported with security updates.
+Currently, only the latest release of RevGenie AI is supported with security updates.
 
 | Version | Supported          |
 | ------- | ------------------ |
@@ -10,7 +10,7 @@ Currently, only the latest release of ShopGenie AI is supported with security up
 
 ## Reporting a Vulnerability
 
-We take the security of ShopGenie AI seriously. If you discover a security vulnerability, we'd appreciate it if you could bring it to our attention so we can fix it.
+We take the security of RevGenie AI seriously. If you discover a security vulnerability, we'd appreciate it if you could bring it to our attention so we can fix it.
 
 Please **do not** report security vulnerabilities through public GitHub issues.
 

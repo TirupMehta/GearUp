@@ -6,7 +6,7 @@ import ReactMarkdown from 'react-markdown';
 export const Copilot: React.FC = () => {
   const { llmApiKey, inventory, riskScore, stockMap, updateStock } = useDashboard();
   const [messages, setMessages] = useState<{ role: 'ai' | 'user', text: string }[]>([
-    { role: 'ai', text: 'Hello! I am your ShopGenie Copilot. Ask me questions about your inventory, or use the buttons below to generate strategic execution plans.' }
+    { role: 'ai', text: 'Hello! I am your ShopGenie StockBuddy. Ask me questions about your inventory, or use the buttons below to generate strategic execution plans.' }
   ]);
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
@@ -104,7 +104,7 @@ Owner Question: ${userText}
     <aside className="w-[340px] shrink-0 bg-panel border-l border-border flex flex-col h-full relative z-20">
       <div className="h-14 px-6 border-b border-border flex items-center gap-3 bg-background/20 backdrop-blur-sm">
         <Sparkles className="w-3.5 h-3.5 text-accent" />
-        <h3 className="text-xs font-bold text-text uppercase tracking-widest leading-none">AI Copilot</h3>
+        <h3 className="text-xs font-bold text-text uppercase tracking-widest leading-none">AI StockBuddy</h3>
       </div>
 
       <div className="flex-1 overflow-y-auto p-4 space-y-4 flex flex-col hide-scrollbar">

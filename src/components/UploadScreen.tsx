@@ -82,7 +82,7 @@ export const UploadScreen: React.FC = () => {
       <div className="max-w-xl w-full">
         <div className="text-center mb-10">
           <h1 className="text-5xl font-extrabold text-primary mb-4">
-            ShopGenie AI Copilot
+            ShopGenie AI StockBuddy
           </h1>
           <p className="text-lg text-text-muted font-medium">
             Secure, zero-hallucination business intelligence driven directly by your store's transaction data.

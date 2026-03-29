@@ -1,49 +1,48 @@
-# ShopGenie AI - MVP Architecture & Roadmap
+# RevGenie AI - MVP Architecture & Roadmap
 
 ## Overview
-**ShopGenie AI** is an Intelligent GenAI Business Copilot designed for MSMEs (Micro, Small, and Medium Enterprises) in the retail sector. 
-It is a single-page React-based web application that operates entirely on the client side, manipulating uploaded data and providing AI-driven insights via LLM integration.
+**RevGenie AI** is an Intelligent GenAI B2B Sales & Revenue Operations platform. 
+It is a single-page React-based web application that operates entirely on the client side, manipulating uploaded CRM data and providing AI-driven pipeline insights via LLM integration.
 
 ### Core Architecture & Constraints
-- [ ] **Frontend Framework**: Modern React (Hooks, Context API for state management)
-- [ ] **Styling**: Tailwind CSS (Theme: Dark mode default with electric blue and neon green accents)
-- [ ] **Data Visualization**: Recharts or Chart.js for smooth, animated, responsive graphs
-- [ ] **Data Source**: CSV File Upload (using PapaParse) or a "Load Sample Data" button for immediate demos
-- [ ] **Backend**: NO backend database, NO complex authentication. Purely state-driven via CSV upload.
-- [ ] **AI Integration**: Direct API calls to an LLM, passing processed CSV data as context.
+- [x] **Frontend Framework**: Modern React (Hooks, Context API for state management)
+- [x] **Styling**: Tailwind CSS (Theme: Dark mode default with electric blue and neon green accents)
+- [x] **Data Visualization**: Recharts for smooth, animated, responsive graphs
+- [x] **Data Source**: CSV File Upload (using PapaParse) or "Load Sample Data"
+- [x] **Backend**: Express + MongoDB for persisting state
+- [x] **AI Integration**: Direct API calls to Gemini AI, passing processed CRM data as context.
 
 ---
 
 ## The 4 Core Pillars (Dashboard Views)
 
-### Pillar 1: Inventory Intelligence
-*Goal: Process historical sales data to manage stock effectively.*
-- [ ] **Action**: Parse CSV to extract daily retail transactions.
-- [ ] **Display - Demand Chart**: Time-Based Demand Forecasting Chart (apply a basic 4-week moving average calculated in-browser).
-- [ ] **Display - Inventory Split**: Data Table categorizing items into "Fast Moving" and "Dead Weight" (Slow Selling).
-- [ ] **Display - Alerts**: "Low Stock Warning" alert cards triggered by the forecasted demand.
+### Pillar 1: Pipeline Intelligence
+*Goal: Process historical deal data to forecast revenue dynamically.*
+- [ ] **Action**: Parse CSV to extract SaaS deal metrics.
+- [ ] **Display - Demand Chart**: Time-Based Revenue Forecasting Chart.
+- [ ] **Display - Deal Split**: Data Table categorizing deals into "High-Velocity" and "Stalled".
+- [ ] **Display - Alerts**: "Pipeline Coverage Warning" alert cards triggered by forecasted misses.
 
-### Pillar 2: Intelligent Price Engine
-*Goal: Interactive pricing simulator to maximize margins and move dead stock.*
-- [ ] **Action**: Provide interactive sliders for pricing adjustments.
-- [ ] **Display - Inputs**: Entry fields for "Product Cost" and "Target Margin".
-- [ ] **Display - Simulator**: A "Scenario-Based Profit Simulation" slider. As the user drags the slider, the UI must instantly recalculate and animate the projected monthly profit.
-- [ ] **Display - Bundles**: Automated discount bundling suggestions specifically targeting the "Dead Weight" inventory identified in Pillar 1.
+### Pillar 2: Deal Simulator
+*Goal: Interactive negotiation simulator to maximize ACV and protect margins.*
+- [ ] **Action**: Provide interactive sliders for deal size and discount adjustments.
+- [ ] **Display - Inputs**: Entry fields for "List Price" and "Target Discount %".
+- [ ] **Display - Simulator**: A "Scenario-Based Profit Simulation" slider with instant animations.
+- [ ] **Display - Bundles**: Automated discount bundling suggestions specifically targeting stalled pipeline.
 
-### Pillar 3: AI Marketing Generator
-*Goal: Turn dead inventory into cash through targeted, AI-generated campaigns.*
-- [ ] **Action**: Generate promotional content using the LLM.
-- [ ] **Display - Grid**: A visual grid of the user's slow-moving products.
-- [ ] **Display - Generator**: A "Generate Campaign" button. When clicked, it takes the product name, current price, and generated discount from Pillar 2, passing them to the LLM.
-- [ ] **Display - Output**: Formatted WhatsApp promotional blasts and Social Media captions.
-- [ ] **Display - Translation Toggle**: A "Hackathon Flex" button to instantly translate the generated campaigns into regional languages (e.g., Hindi, Spanish) via the LLM.
+### Pillar 3: AI Sequence Generator
+*Goal: Turn stalled deals into cash through hyper-personalized, AI-generated outbound cadences.*
+- [ ] **Action**: Generate email/LinkedIn content using Gemini.
+- [ ] **Display - Grid**: A visual grid of the user's stalled prospects.
+- [ ] **Display - Generator**: A "Generate Sequence" button mapping deal value to the outreach tone.
+- [ ] **Display - Output**: Formatted outbound emails and follow-ups.
+- [ ] **Display - Translation Toggle**: A button to instantly translate sequences into regional languages.
 
-### Pillar 4: Business Health Dashboard
-*Goal: Macro view of business survival and anomaly detection.*
-- [ ] **Action**: Evaluate overall business trajectory and risks.
-- [ ] **Display - Growth Chart**: Month-over-Month growth charts.
-- [ ] **Display - Anomalies**: Highlight specific days in the dataset with unnatural sales spikes or drops.
-- [ ] **Display - Risk Score**: A gauge chart visualizing a risk score (calculated via algorithmic weighting of low stock vs. high expenses).
+### Pillar 4: Revenue Dashboard
+*Goal: Macro view of pipeline survival and risk detection.*
+- [ ] **Action**: Evaluate overall business trajectory and rep performance.
+- [ ] **Display - Growth Chart**: Month-over-Month pipeline growth charts.
+- [ ] **Display - Risk Score**: A gauge chart visualizing a risk score (calculated via algorithmic weighting of slipped deals vs closed-won ratios).
 
 ---
 
@@ -51,38 +50,25 @@ It is a single-page React-based web application that operates entirely on the cl
 
 These features demonstrate true GenAI capabilities, moving beyond a standard dashboard to an active reasoning engine.
 
-- [ ] **Feature A: The Conversational Translator (Context-Aware Copilot)**
-  - A persistent right-side or floating "Copilot" chat panel.
-  - The Copilot must have contextual awareness of the dashboard state, not just general knowledge.
-  - *Interaction Detail*: If a user clicks a revenue dip on the chart, the Copilot automatically generates an explanation: *"I see a 12% drop in revenue here. This correlates with a stockout of your top 3 fast-moving items."*
+- [ ] **Feature A: The Deal Strategist (Context-Aware SalesBuddy)**
+  - A persistent right-side "SalesBuddy" chat panel.
+  - SalesBuddy has contextual awareness of the pipeline state.
+  - *Interaction Detail*: If a user clicks a revenue dip on the chart, SalesBuddy automatically generates an explanation: *"I see a 12% drop in pipeline coverage here. This correlates with two Enterprise deals stalling in legal."*
 
 - [ ] **Feature B: One-Click Strategy Execution (Weekly Battleplan)**
   - A global button titled "Generate Weekly Battleplan".
-  - *Interaction Detail*: Triggers the LLM to read the summaries of all 4 pillars. It then outputs a highly structured, 3-step actionable list written in simple, non-technical language for the store owner.
+  - *Interaction Detail*: Triggers Gemini to read the summaries of all 4 pillars and output a highly structured, 3-step actionable list written for the rep to execute today.
 
 - [ ] **Feature C: Voice-to-Action Simulation**
   - A microphone icon in the UI.
-  - *Interaction Detail*: Simulates transcription showing the user saying: *"What should I price my milk at today?"* The system then visually routes this query to the Intelligent Price Engine to demonstrate voice-driven UI commands.
+  - *Interaction Detail*: Simulates transcription showing the user saying: *"What happens if I give Acme Corp a 15% discount?"* The system then visually routes this query to the Deal Simulator.
 
 ---
 
-## Implementation Workflow (How we will build it)
+## Implementation Workflow 
 
-- [ ] **Phase 1: Project Setup & Theming**
-  - Scaffold project structure (Vite + React + Tailwind).
-  - Define global CSS tokens for the dark theme, electric blue, and neon green accents.
-  - Create the foundational App layout (Left Nav, Main Canvas, Right Copilot Panel).
-- [ ] **Phase 2: Data Handling & Mocks**
-  - Implement PapaParse for robust CSV ingestion.
-  - Create a realistic local mock dataset ("Load Sample Data") for instant demo ability without a file.
-  - Ensure all charts handle empty states gracefully before data is loaded.
-- [ ] **Phase 3: Building The 4 Pillars**
-  - Construct the UI and logic for Inventory Intelligence, Price Engine, Marketing Generator, and Health Dashboard.
-  - Integrate Recharts/Chart.js to display data cleanly.
-- [ ] **Phase 4: LLM Integration (The Brains)**
-  - Wire up an LLM API (e.g., OpenAI, Gemini, or Claude) directly from the client.
-  - Set up dynamic prompting systems that feed CSV context and UI states to the LLM.
-- [ ] **Phase 5: The Winning Features (Polish)**
-  - Implement the Context-Aware Copilot interactions (Feature A).
-  - Add the One-Click Strategy execution (Feature B).
-  - Wire the mock Voice-to-Action simulation (Feature C).
+- [x] **Phase 1: Project Setup & Theming**
+- [x] **Phase 2: Data Handling & Mocks**
+- [x] **Phase 3: Building The 4 Pillars**
+- [x] **Phase 4: LLM Integration (The Brains)**
+- [x] **Phase 5: The Winning Features (Hackathon Polish)**
