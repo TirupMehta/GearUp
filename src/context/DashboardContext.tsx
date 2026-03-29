@@ -35,15 +35,19 @@ export const DashboardProvider: React.FC<{ children: ReactNode }> = ({ children 
 
   // Hydrate from Firestore on login
   useEffect(() => {
+    // Force the upload screen to show on every fresh login session
+    console.log('🔄 ShopGenie Auth Change: Reseting Dashboard State');
+    setShowDashboard(false);
+
     if (!user) {
       setInventory([]);
       setTransactions([]);
       setStockMap({});
-      setShowDashboard(false);
       return;
     }
     const fetchFromFirestore = async () => {
       try {
+        console.log('📥 ShopGenie: Fetching existing inventory from Firestore...');
         const snapshot = await getDocs(collection(db, getInventoryPath()));
         const newStockMap: Record<string, number> = {};
         const loadedInventory: InventoryItem[] = [];
@@ -64,6 +68,7 @@ export const DashboardProvider: React.FC<{ children: ReactNode }> = ({ children 
           });
         });
         if (loadedInventory.length > 0) {
+          console.log(`✅ Loaded ${loadedInventory.length} items. Staying on Upload Screen until opted-in.`);
           setInventory(loadedInventory);
           setStockMap(newStockMap);
         }
