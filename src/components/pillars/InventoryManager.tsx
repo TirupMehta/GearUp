@@ -109,6 +109,20 @@ Be direct, professional, and easy to understand.`;
               const editVal = editMap[p.ProductName] ?? '';
               const hasChanged = isEditing && editVal !== String(currentStock) && editVal !== '';
 
+              let displayStatus = 'Normal';
+              let statusClass = 'bg-border/30 text-text-muted border border-border';
+              
+              if (currentStock === 0) {
+                displayStatus = 'Out of Stock';
+                statusClass = 'bg-danger/10 text-danger border border-danger/20';
+              } else if (currentStock < 20) {
+                displayStatus = 'Low Stock';
+                statusClass = 'bg-warning/10 text-warning border border-warning/20';
+              } else if (currentStock >= 100) {
+                displayStatus = 'High Stock';
+                statusClass = 'bg-accent/10 text-accent border border-accent/20';
+              }
+
               return (
                 <tr key={i} className="hover:bg-background/40 transition-colors group">
                   <td className="px-6 py-4">
@@ -116,22 +130,19 @@ Be direct, professional, and easy to understand.`;
                     <div className="text-xs text-text-muted mt-0.5">{p.Category}</div>
                   </td>
                   <td className="px-6 py-4 text-center">
-                    <span className={`px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider ${
-                      p.Status === 'Fast Moving'
-                        ? 'bg-accent/10 text-accent border border-accent/20'
-                        : p.Status === 'Dead Weight'
-                        ? 'bg-danger/10 text-danger border border-danger/20'
-                        : 'bg-border/30 text-text-muted border border-border'
-                    }`}>
-                      {p.Status}
+                    <span className={`px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider ${statusClass}`}>
+                      {displayStatus}
                     </span>
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex items-center justify-center gap-2">
                       {/* Decrement */}
                       <button
-                        onClick={() => updateStock(p.ProductName, -1)}
-                        className="p-1.5 bg-background hover:bg-danger/10 hover:text-danger rounded-md transition border border-border text-text-muted text-xs font-bold w-7 h-7 flex items-center justify-center"
+                        onClick={() => {
+                          const current = isEditing && editVal !== '' ? parseInt(editVal, 10) : currentStock;
+                          setEditMap(prev => ({ ...prev, [p.ProductName]: String(Math.max(0, current - 1)) }));
+                        }}
+                        className="p-1.5 bg-background hover:bg-danger/10 hover:text-danger rounded-md transition border border-border text-text-muted text-xs font-bold w-7 h-7 flex items-center justify-center shrink-0"
                       >
                         −
                       </button>
@@ -148,13 +159,13 @@ Be direct, professional, and easy to understand.`;
                             if (e.key === 'Enter') commitEdit(p.ProductName);
                             if (e.key === 'Escape') cancelEdit(p.ProductName);
                           }}
-                          className="w-20 text-center bg-background border border-accent/50 rounded-md px-2 py-1 font-mono font-bold text-text focus:outline-none focus:ring-1 focus:ring-accent text-sm"
+                          className="w-16 text-center bg-background border border-accent/50 rounded-md px-1 py-1 font-mono font-bold text-text focus:outline-none focus:ring-1 focus:ring-accent text-sm"
                         />
                       ) : (
                         <button
                           onClick={() => startEdit(p.ProductName)}
                           title="Click to edit"
-                          className="w-16 text-center font-mono font-bold text-text bg-background hover:bg-accent/5 hover:border-accent/40 border border-border rounded-md px-2 py-1 transition text-sm cursor-text"
+                          className="w-16 text-center font-mono font-bold text-text bg-background hover:bg-accent/5 hover:border-accent/40 border border-border rounded-md px-1 py-1 transition text-sm cursor-text"
                         >
                           {currentStock}
                         </button>
@@ -162,8 +173,11 @@ Be direct, professional, and easy to understand.`;
 
                       {/* Increment */}
                       <button
-                        onClick={() => updateStock(p.ProductName, 1)}
-                        className="p-1.5 bg-background hover:bg-accent/10 hover:text-accent rounded-md transition border border-border text-text-muted text-xs font-bold w-7 h-7 flex items-center justify-center"
+                        onClick={() => {
+                          const current = isEditing && editVal !== '' ? parseInt(editVal, 10) : currentStock;
+                          setEditMap(prev => ({ ...prev, [p.ProductName]: String(current + 1) }));
+                        }}
+                        className="p-1.5 bg-background hover:bg-accent/10 hover:text-accent rounded-md transition border border-border text-text-muted text-xs font-bold w-7 h-7 flex items-center justify-center shrink-0"
                       >
                         +
                       </button>
@@ -172,10 +186,10 @@ Be direct, professional, and easy to understand.`;
                       {hasChanged && (
                         <button
                           onClick={() => commitEdit(p.ProductName)}
-                          className="flex items-center gap-1 px-3 py-1.5 bg-accent text-background rounded-md text-[10px] font-bold uppercase tracking-widest transition hover:opacity-90 shadow-sm"
+                          className="flex items-center gap-1 px-3 py-1.5 bg-accent text-background rounded-md text-[10px] font-bold uppercase tracking-widest transition hover:opacity-90 shadow-sm shrink-0 whitespace-nowrap"
                         >
                           <Check className="w-3 h-3" />
-                          Save
+                          Update the Stock
                         </button>
                       )}
                     </div>
