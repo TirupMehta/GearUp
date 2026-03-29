@@ -11,6 +11,14 @@ dist/
 .env.*.local
 backend/.env
 
+# Firebase service account keys (SECRETS)
+backend/firebase-service-account.json
+*firebase-adminsdk*.json
+
+# DB maintenance scripts (not for production)
+clear-firestore.js
+backend/clear-firestore.js
+
 # Logs
 *.log
 npm-debug.log*

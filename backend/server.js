@@ -5,9 +5,30 @@ const cors = require('cors');
 
 const Item = require('./models/Item');
 
+const admin = require('firebase-admin');
+const serviceAccount = require('./firebase-service-account.json');
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount)
+});
+
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// Middleware to verify Firebase ID Tokens
+const verifyToken = async (req, res, next) => {
+  const idToken = req.headers.authorization?.split('Bearer ')[1];
+  if (!idToken) return res.status(401).json({ error: 'No token provided' });
+
+  try {
+    const decodedToken = await admin.auth().verifyIdToken(idToken);
+    req.user = decodedToken;
+    next();
+  } catch (error) {
+    res.status(401).json({ error: 'Invalid token' });
+  }
+};
 
 // Check if we have real credentials
 const isUsingPlaceholders = process.env.MONGO_URI.includes('<username>') || !process.env.MONGO_URI;

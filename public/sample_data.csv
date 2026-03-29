@@ -1,0 +1,141 @@
+Date,ProductName,Category,QuantitySold,SalePrice,UnitCost
+2024-01-01,Boat Airdopes 141,Electronics,5,1299,800
+2024-01-01,Generic Type-C Cable,Accessories,12,199,80
+2024-01-01,JBL C100SI Earphones,Electronics,2,799,450
+2024-01-01,Mi 33W Adapter,Electronics,8,599,300
+2024-01-01,Portronics Power Bank,Electronics,3,1499,900
+2024-01-01,SanDisk 64GB MicroSD,Storage,14,699,350
+2024-01-01,Spigen Armor Case Y20,Accessories,1,599,300
+2024-01-01,iPhone 14 Clear Case,Accessories,2,399,150
+2024-01-01,Zebronics BT Speaker,Electronics,6,1799,1000
+2024-01-01,Redmi Note 12 Cover,Accessories,9,299,100
+2024-01-02,Boat Airdopes 141,Electronics,7,1299,800
+2024-01-02,Generic Type-C Cable,Accessories,15,199,80
+2024-01-02,JBL C100SI Earphones,Electronics,1,799,450
+2024-01-02,Mi 33W Adapter,Electronics,10,599,300
+2024-01-02,Portronics Power Bank,Electronics,4,1499,900
+2024-01-02,SanDisk 64GB MicroSD,Storage,18,699,350
+2024-01-02,Spigen Armor Case Y20,Accessories,0,599,300
+2024-01-02,iPhone 14 Clear Case,Accessories,3,399,150
+2024-01-02,Zebronics BT Speaker,Electronics,8,1799,1000
+2024-01-02,Redmi Note 12 Cover,Accessories,12,299,100
+2024-01-03,Boat Airdopes 141,Electronics,4,1299,800
+2024-01-03,Generic Type-C Cable,Accessories,20,199,80
+2024-01-03,JBL C100SI Earphones,Electronics,1,799,450
+2024-01-03,Mi 33W Adapter,Electronics,6,599,300
+2024-01-03,Portronics Power Bank,Electronics,2,1499,900
+2024-01-03,SanDisk 64GB MicroSD,Storage,22,699,350
+2024-01-03,Spigen Armor Case Y20,Accessories,1,599,300
+2024-01-03,iPhone 14 Clear Case,Accessories,1,399,150
+2024-01-03,Zebronics BT Speaker,Electronics,5,1799,1000
+2024-01-03,Redmi Note 12 Cover,Accessories,14,299,100
+2024-01-04,Boat Airdopes 141,Electronics,9,1299,800
+2024-01-04,Generic Type-C Cable,Accessories,11,199,80
+2024-01-04,JBL C100SI Earphones,Electronics,3,799,450
+2024-01-04,Mi 33W Adapter,Electronics,9,599,300
+2024-01-04,Portronics Power Bank,Electronics,5,1499,900
+2024-01-04,SanDisk 64GB MicroSD,Storage,16,699,350
+2024-01-04,Spigen Armor Case Y20,Accessories,0,599,300
+2024-01-04,iPhone 14 Clear Case,Accessories,2,399,150
+2024-01-04,Zebronics BT Speaker,Electronics,7,1799,1000
+2024-01-04,Redmi Note 12 Cover,Accessories,11,299,100
+2024-01-05,Boat Airdopes 141,Electronics,6,1299,800
+2024-01-05,Generic Type-C Cable,Accessories,17,199,80
+2024-01-05,JBL C100SI Earphones,Electronics,2,799,450
+2024-01-05,Mi 33W Adapter,Electronics,11,599,300
+2024-01-05,Portronics Power Bank,Electronics,3,1499,900
+2024-01-05,SanDisk 64GB MicroSD,Storage,19,699,350
+2024-01-05,Spigen Armor Case Y20,Accessories,1,599,300
+2024-01-05,iPhone 14 Clear Case,Accessories,4,399,150
+2024-01-05,Zebronics BT Speaker,Electronics,9,1799,1000
+2024-01-05,Redmi Note 12 Cover,Accessories,13,299,100
+2024-01-06,Boat Airdopes 141,Electronics,11,1299,800
+2024-01-06,Generic Type-C Cable,Accessories,24,199,80
+2024-01-06,JBL C100SI Earphones,Electronics,1,799,450
+2024-01-06,Mi 33W Adapter,Electronics,13,599,300
+2024-01-06,Portronics Power Bank,Electronics,6,1499,900
+2024-01-06,SanDisk 64GB MicroSD,Storage,25,699,350
+2024-01-06,Spigen Armor Case Y20,Accessories,0,599,300
+2024-01-06,iPhone 14 Clear Case,Accessories,2,399,150
+2024-01-06,Zebronics BT Speaker,Electronics,10,1799,1000
+2024-01-06,Redmi Note 12 Cover,Accessories,16,299,100
+2024-01-07,Boat Airdopes 141,Electronics,8,1299,800
+2024-01-07,Generic Type-C Cable,Accessories,19,199,80
+2024-01-07,JBL C100SI Earphones,Electronics,2,799,450
+2024-01-07,Mi 33W Adapter,Electronics,7,599,300
+2024-01-07,Portronics Power Bank,Electronics,4,1499,900
+2024-01-07,SanDisk 64GB MicroSD,Storage,21,699,350
+2024-01-07,Spigen Armor Case Y20,Accessories,1,599,300
+2024-01-07,iPhone 14 Clear Case,Accessories,3,399,150
+2024-01-07,Zebronics BT Speaker,Electronics,6,1799,1000
+2024-01-07,Redmi Note 12 Cover,Accessories,15,299,100
+2024-01-08,Boat Airdopes 141,Electronics,5,1299,800
+2024-01-08,Generic Type-C Cable,Accessories,13,199,80
+2024-01-08,JBL C100SI Earphones,Electronics,0,799,450
+2024-01-08,Mi 33W Adapter,Electronics,8,599,300
+2024-01-08,Portronics Power Bank,Electronics,2,1499,900
+2024-01-08,SanDisk 64GB MicroSD,Storage,17,699,350
+2024-01-08,Spigen Armor Case Y20,Accessories,1,599,300
+2024-01-08,iPhone 14 Clear Case,Accessories,1,399,150
+2024-01-08,Zebronics BT Speaker,Electronics,5,1799,1000
+2024-01-08,Redmi Note 12 Cover,Accessories,10,299,100
+2024-01-09,Boat Airdopes 141,Electronics,7,1299,800
+2024-01-09,Generic Type-C Cable,Accessories,21,199,80
+2024-01-09,JBL C100SI Earphones,Electronics,2,799,450
+2024-01-09,Mi 33W Adapter,Electronics,10,599,300
+2024-01-09,Portronics Power Bank,Electronics,5,1499,900
+2024-01-09,SanDisk 64GB MicroSD,Storage,23,699,350
+2024-01-09,Spigen Armor Case Y20,Accessories,0,599,300
+2024-01-09,iPhone 14 Clear Case,Accessories,2,399,150
+2024-01-09,Zebronics BT Speaker,Electronics,8,1799,1000
+2024-01-09,Redmi Note 12 Cover,Accessories,12,299,100
+2024-01-10,Boat Airdopes 141,Electronics,10,1299,800
+2024-01-10,Generic Type-C Cable,Accessories,26,199,80
+2024-01-10,JBL C100SI Earphones,Electronics,1,799,450
+2024-01-10,Mi 33W Adapter,Electronics,12,599,300
+2024-01-10,Portronics Power Bank,Electronics,7,1499,900
+2024-01-10,SanDisk 64GB MicroSD,Storage,28,699,350
+2024-01-10,Spigen Armor Case Y20,Accessories,1,599,300
+2024-01-10,iPhone 14 Clear Case,Accessories,3,399,150
+2024-01-10,Zebronics BT Speaker,Electronics,11,1799,1000
+2024-01-10,Redmi Note 12 Cover,Accessories,17,299,100
+2024-01-11,Boat Airdopes 141,Electronics,6,1299,800
+2024-01-11,Generic Type-C Cable,Accessories,18,199,80
+2024-01-11,JBL C100SI Earphones,Electronics,2,799,450
+2024-01-11,Mi 33W Adapter,Electronics,9,599,300
+2024-01-11,Portronics Power Bank,Electronics,3,1499,900
+2024-01-11,SanDisk 64GB MicroSD,Storage,20,699,350
+2024-01-11,Spigen Armor Case Y20,Accessories,0,599,300
+2024-01-11,iPhone 14 Clear Case,Accessories,2,399,150
+2024-01-11,Zebronics BT Speaker,Electronics,7,1799,1000
+2024-01-11,Redmi Note 12 Cover,Accessories,13,299,100
+2024-01-12,Boat Airdopes 141,Electronics,8,1299,800
+2024-01-12,Generic Type-C Cable,Accessories,22,199,80
+2024-01-12,JBL C100SI Earphones,Electronics,1,799,450
+2024-01-12,Mi 33W Adapter,Electronics,11,599,300
+2024-01-12,Portronics Power Bank,Electronics,4,1499,900
+2024-01-12,SanDisk 64GB MicroSD,Storage,24,699,350
+2024-01-12,Spigen Armor Case Y20,Accessories,1,599,300
+2024-01-12,iPhone 14 Clear Case,Accessories,4,399,150
+2024-01-12,Zebronics BT Speaker,Electronics,9,1799,1000
+2024-01-12,Redmi Note 12 Cover,Accessories,14,299,100
+2024-01-13,Boat Airdopes 141,Electronics,12,1299,800
+2024-01-13,Generic Type-C Cable,Accessories,30,199,80
+2024-01-13,JBL C100SI Earphones,Electronics,3,799,450
+2024-01-13,Mi 33W Adapter,Electronics,14,599,300
+2024-01-13,Portronics Power Bank,Electronics,8,1499,900
+2024-01-13,SanDisk 64GB MicroSD,Storage,32,699,350
+2024-01-13,Spigen Armor Case Y20,Accessories,0,599,300
+2024-01-13,iPhone 14 Clear Case,Accessories,2,399,150
+2024-01-13,Zebronics BT Speaker,Electronics,12,1799,1000
+2024-01-13,Redmi Note 12 Cover,Accessories,18,299,100
+2024-01-14,Boat Airdopes 141,Electronics,9,1299,800
+2024-01-14,Generic Type-C Cable,Accessories,25,199,80
+2024-01-14,JBL C100SI Earphones,Electronics,2,799,450
+2024-01-14,Mi 33W Adapter,Electronics,8,599,300
+2024-01-14,Portronics Power Bank,Electronics,5,1499,900
+2024-01-14,SanDisk 64GB MicroSD,Storage,27,699,350
+2024-01-14,Spigen Armor Case Y20,Accessories,1,599,300
+2024-01-14,iPhone 14 Clear Case,Accessories,3,399,150
+2024-01-14,Zebronics BT Speaker,Electronics,10,1799,1000
+2024-01-14,Redmi Note 12 Cover,Accessories,16,299,100

@@ -1,25 +1,14 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { 
-  getAuth, 
-  createUserWithEmailAndPassword, 
-  signInWithEmailAndPassword, 
-  signOut, 
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
   onAuthStateChanged,
-  User 
+  updateProfile,
+  User
 } from 'firebase/auth';
-import { initializeApp } from 'firebase/app';
-
-const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+import { auth } from '../lib/firebase';
+import { logActivity } from '../utils/activityLogger';
 
 interface AuthContextType {
   user: User | null;
@@ -44,14 +33,26 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   }, []);
 
   const login = async (email: string, password: string) => {
-    await signInWithEmailAndPassword(auth, email, password);
+    const cred = await signInWithEmailAndPassword(auth, email, password);
+    await logActivity(cred.user.uid, email, 'LOGIN', 'Logged in to ShopGenie AI');
   };
 
   const signup = async (email: string, password: string) => {
-    await createUserWithEmailAndPassword(auth, email, password);
+    const cred = await createUserWithEmailAndPassword(auth, email, password);
+    const displayName = email.split('@')[0];
+    await updateProfile(cred.user, { displayName });
+    await logActivity(cred.user.uid, email, 'LOGIN', `New account created — ${displayName}`);
   };
 
   const logout = async () => {
+    if (auth.currentUser) {
+      await logActivity(
+        auth.currentUser.uid,
+        auth.currentUser.email ?? '',
+        'LOGOUT',
+        'Logged out of ShopGenie AI'
+      );
+    }
     await signOut(auth);
   };
 

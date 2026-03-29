@@ -14,6 +14,16 @@ import InventoryManager from './components/pillars/InventoryManager';
 import PriceEngine from './components/pillars/PriceEngine';
 import MarketingGenerator from './components/pillars/MarketingGenerator';
 import BusinessHealth from './components/pillars/BusinessHealth';
+import ActivityLog from './components/pillars/ActivityLog';
+
+const TAB_LABELS: Record<string, string> = {
+  manager:   'Inventory Manager',
+  inventory: 'Inventory Intelligence',
+  pricing:   'Intelligent Price Engine',
+  marketing: 'AI Marketing Generator',
+  health:    'Business Health Dashboard',
+  logs:      'Activity Log',
+};
 
 function App() {
   const { user, loading, logout } = useAuth();
@@ -22,75 +32,72 @@ function App() {
   const [activeTab, setActiveTab] = useState('manager');
   const [showSplash, setShowSplash] = useState(true);
 
-  // Show splash animation before anything else
-  if (showSplash) {
-    return <SplashScreen onComplete={() => setShowSplash(false)} />;
-  }
+  if (showSplash) return <SplashScreen onComplete={() => setShowSplash(false)} />;
 
-  // Show loading while Firebase checks session
   if (loading) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin" />
+        <div className="w-10 h-10 border-2 border-accent border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
 
-  // Not logged in → show login screen
-  if (!user) {
-    return <LoginScreen />;
-  }
+  if (!user) return <LoginScreen />;
+  if (!hasData) return <UploadScreen />;
 
-  // Logged in but no data yet → show upload screen
-  if (!hasData) {
-    return <UploadScreen />;
-  }
+  // Display name: email prefix before @
+  const displayName = user.displayName || user.email?.split('@')[0] || 'user';
 
   return (
-    <div className="flex h-screen w-full overflow-hidden bg-background">
+    <div className="flex h-screen w-screen overflow-hidden bg-background">
+      {/* LEFT: fixed-width sidebar */}
       <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
 
-      <main className="flex-1 flex flex-col h-full overflow-y-auto w-full max-w-[calc(100%-320px)] relative">
-        <header className="sticky top-0 z-10 bg-panel/80 backdrop-blur-md border-b border-border p-6 flex justify-between items-center">
-          <div>
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              {activeTab === 'manager' && 'Inventory Manager'}
-              {activeTab === 'inventory' && 'Inventory Intelligence'}
-              {activeTab === 'pricing' && 'Intelligent Price Engine'}
-              {activeTab === 'marketing' && 'AI Marketing Generator'}
-              {activeTab === 'health' && 'Business Health Dashboard'}
+      {/* CENTER: takes remaining space, scrollable */}
+      <main className="flex-1 min-w-0 flex flex-col h-full overflow-hidden bg-background">
+        {/* Sticky header */}
+        <header className="shrink-0 sticky top-0 z-10 bg-background/90 backdrop-blur-md border-b border-border h-14 flex items-center justify-between px-4 sm:px-6 gap-4">
+          <div className="min-w-0">
+            <h1 className="text-xs font-bold text-text uppercase tracking-widest leading-none truncate">
+              {TAB_LABELS[activeTab] ?? activeTab}
             </h1>
-            <p className="text-sm text-text-muted mt-1">
-              Logged in as <span className="text-primary">{user.email}</span>
+            <p className="text-xs text-text-muted mt-0.5 truncate">
+              Logged in as&nbsp;
+              <span className="text-accent font-semibold">{displayName}</span>
             </p>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 shrink-0">
             <button
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-panel hover:bg-background border border-border text-text transition-all"
               title={`Switch to ${theme === 'light' ? 'Dark' : 'Light'} Mode`}
             >
-              {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5 text-warning" />}
+              {theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4 text-warning" />}
             </button>
             <button
               onClick={logout}
-              className="flex items-center gap-2 px-4 py-2 bg-panel hover:bg-danger/80 text-text hover:text-white rounded-lg border border-border hover:border-danger transition text-sm shadow-sm"
+              className="flex items-center gap-1.5 px-3 py-1.5 bg-panel hover:bg-danger hover:text-white text-text-muted rounded-md border border-border transition text-xs font-medium"
             >
-              <LogOut className="w-4 h-4" />
-              Logout
+              <LogOut className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">Logout</span>
             </button>
           </div>
         </header>
-        
-        <div className="p-6 flex-1 bg-gradient-to-br from-background to-panel/30">
-          {activeTab === 'manager' && <InventoryManager />}
-          {activeTab === 'inventory' && <InventoryIntelligence />}
-          {activeTab === 'pricing' && <PriceEngine />}
-          {activeTab === 'marketing' && <MarketingGenerator />}
-          {activeTab === 'health' && <BusinessHealth />}
+
+        {/* Scrollable content */}
+        <div className="flex-1 overflow-y-auto overflow-x-hidden">
+          <div className="p-4 sm:p-6 lg:p-8">
+            {activeTab === 'manager'   && <InventoryManager />}
+            {activeTab === 'inventory' && <InventoryIntelligence />}
+            {activeTab === 'pricing'   && <PriceEngine />}
+            {activeTab === 'marketing' && <MarketingGenerator />}
+            {activeTab === 'health'    && <BusinessHealth />}
+            {activeTab === 'logs'      && <ActivityLog />}
+          </div>
         </div>
       </main>
 
+      {/* RIGHT: copilot panel */}
       <Copilot />
     </div>
   );

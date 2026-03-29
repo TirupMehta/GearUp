@@ -3,6 +3,7 @@ import { doc, setDoc, getDoc, collection, getDocs, updateDoc } from 'firebase/fi
 import { db } from '../lib/firebase';
 import { useAuth } from './AuthContext';
 import { Transaction, InventoryItem, dataEngine } from '../utils/dataEngine';
+import { logActivity } from '../utils/activityLogger';
 
 interface DashboardContextType {
   hasData: boolean;
@@ -14,7 +15,7 @@ interface DashboardContextType {
   loadCsvData: (file: File) => Promise<void>;
   riskScore: number;
   stockMap: Record<string, number>;
-  updateStock: (productName: string, change: number) => void;
+  updateStock: (productName: string, change: number, newAbsoluteValue?: number) => void;
   skipUpload: () => void;
 }
 
@@ -30,22 +31,22 @@ export const DashboardProvider: React.FC<{ children: ReactNode }> = ({ children 
   const [stockMap, setStockMap] = useState<Record<string, number>>({});
   const [hasSkipped, setHasSkipped] = useState(false);
 
-  // Helper: get user-scoped collection path using email prefix
-  const getUserKey = () => {
-    const email = user!.email || user!.uid;
-    return email.split('@')[0];
-  };
-  const getInventoryPath = () => `users/${getUserKey()}/inventory`;
+  const getInventoryPath = () => `users/${user!.uid}/inventory`;
 
-  // On login: hydrate inventory from Firestore
+  // Hydrate from Firestore on login
   useEffect(() => {
-    if (!user) return;
+    if (!user) {
+      setInventory([]);
+      setTransactions([]);
+      setStockMap({});
+      setHasSkipped(false);
+      return;
+    }
     const fetchFromFirestore = async () => {
       try {
         const snapshot = await getDocs(collection(db, getInventoryPath()));
         const newStockMap: Record<string, number> = {};
         const loadedInventory: InventoryItem[] = [];
-
         snapshot.forEach(docSnap => {
           const data = docSnap.data();
           newStockMap[docSnap.id] = data.currentStock ?? 100;
@@ -62,7 +63,6 @@ export const DashboardProvider: React.FC<{ children: ReactNode }> = ({ children 
             Cost: data.Cost || 0,
           });
         });
-
         if (loadedInventory.length > 0) {
           setInventory(loadedInventory);
           setStockMap(newStockMap);
@@ -74,12 +74,28 @@ export const DashboardProvider: React.FC<{ children: ReactNode }> = ({ children 
     fetchFromFirestore();
   }, [user]);
 
-  const updateStock = async (productName: string, change: number) => {
-    const newVal = Math.max(0, (stockMap[productName] || 0) + change);
+  /**
+   * updateStock: pass change (delta) OR newAbsoluteValue if editing inline.
+   * If newAbsoluteValue is defined, it overrides.
+   */
+  const updateStock = async (productName: string, change: number, newAbsoluteValue?: number) => {
+    const oldVal = stockMap[productName] || 0;
+    const newVal = newAbsoluteValue !== undefined
+      ? Math.max(0, newAbsoluteValue)
+      : Math.max(0, oldVal + change);
+
     setStockMap(prev => ({ ...prev, [productName]: newVal }));
+
     if (!user) return;
     try {
       await updateDoc(doc(db, getInventoryPath(), productName), { currentStock: newVal });
+      // Log the stock change
+      await logActivity(
+        user.uid,
+        user.email ?? '',
+        'STOCK_UPDATE',
+        `${productName}: ${oldVal} → ${newVal} units`
+      );
     } catch (e) {
       console.error('Firestore stock update failed:', e);
     }
@@ -99,7 +115,6 @@ export const DashboardProvider: React.FC<{ children: ReactNode }> = ({ children 
       setInventory(inv);
       setRiskScore(dataEngine.calculateRiskScore(data));
 
-      // Sync to Firestore under user's account
       const newStockMap: Record<string, number> = { ...stockMap };
       if (user) {
         try {
@@ -121,6 +136,13 @@ export const DashboardProvider: React.FC<{ children: ReactNode }> = ({ children 
               currentStock,
             }, { merge: true });
           }
+          // Log upload
+          await logActivity(
+            user.uid,
+            user.email ?? '',
+            'CSV_UPLOADED',
+            `Uploaded ${file.name} — ${data.length} transactions, ${inv.length} products`
+          );
         } catch (firestoreError) {
           console.error('Firestore sync failed:', firestoreError);
         }
@@ -128,7 +150,7 @@ export const DashboardProvider: React.FC<{ children: ReactNode }> = ({ children 
       setStockMap(newStockMap);
     } catch (error) {
       console.error('Failed to load CSV', error);
-      alert('Error validating CSV formatting. Please ensure it has Date, ProductName, Category, QuantitySold, SalePrice, UnitCost.');
+      alert('Error validating CSV. Please ensure it has: Date, ProductName, Category, QuantitySold, SalePrice, UnitCost.');
     } finally {
       setIsLoading(false);
     }
@@ -146,7 +168,7 @@ export const DashboardProvider: React.FC<{ children: ReactNode }> = ({ children 
       riskScore,
       stockMap,
       updateStock,
-      skipUpload: () => setHasSkipped(true)
+      skipUpload: () => setHasSkipped(true),
     }}>
       {children}
     </DashboardContext.Provider>
@@ -155,8 +177,6 @@ export const DashboardProvider: React.FC<{ children: ReactNode }> = ({ children 
 
 export const useDashboard = () => {
   const context = useContext(DashboardContext);
-  if (!context) {
-    throw new Error('useDashboard must be used within a DashboardProvider');
-  }
+  if (!context) throw new Error('useDashboard must be used within a DashboardProvider');
   return context;
 };
