@@ -85,14 +85,23 @@ function App() {
         </header>
 
         {/* Scrollable content */}
-        <div className="flex-1 overflow-y-auto overflow-x-hidden">
-          <div className="p-4 sm:p-6 lg:p-8">
+        <div className="flex-1 overflow-y-auto overflow-x-hidden flex flex-col">
+          <div className="p-4 sm:p-6 lg:p-8 flex-1">
             {activeTab === 'manager'   && <InventoryManager />}
             {activeTab === 'inventory' && <InventoryIntelligence />}
             {activeTab === 'pricing'   && <PriceEngine />}
             {activeTab === 'marketing' && <MarketingGenerator />}
             {activeTab === 'health'    && <BusinessHealth />}
             {activeTab === 'logs'      && <ActivityLog />}
+          </div>
+          
+          {/* Subtle Credentials Footer */}
+          <div className="py-6 mt-auto text-center text-[10px] text-text-muted flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 opacity-30 hover:opacity-100 transition-opacity select-none cursor-default font-mono">
+            <span>Ui UX & Frontend : Dhruv Patva & Tirup Maheta</span>
+            <span className="hidden sm:inline text-border">•</span>
+            <span>Ai & Backend : Varad vekariya</span>
+            <span className="hidden sm:inline text-border">•</span>
+            <span>Documentation : Sanidhya Roy</span>
           </div>
         </div>
       </main>
